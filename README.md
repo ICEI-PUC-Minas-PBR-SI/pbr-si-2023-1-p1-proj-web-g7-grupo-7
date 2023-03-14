@@ -1,5 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10303892&assignment_repo_type=AssignmentRepo)
-# Título do Projeto
+# Marketing Place para vendedor
 
 `CURSO: Sistemas de Informação`
 
@@ -11,15 +11,21 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
+* Alexsander Rodrigues Lopes
+* Elenice Florentina de Oliveira dos Reis
+* Fernanda Evangelista Machado
+* Jean Carlo Machado de Oliveira
+* Lorrainy Pâmela Siqueira Ferreira
+* Lucas Braga de Almeida
+* Marcos Vinícius Campos de Oliveira
+* Matheus Filipe Alves
+
 
 ## Orientador
 
-* Nome completo do professor 1
+* Cristiano Geraldo Teixeira Silva
+* Franciele Cristina Parreiras Rodrigues
+*
 
 # Planejamento
 
@@ -38,3 +44,4 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 # Apresentação
 
 <li><a href="presentation/README.md"> Apresentação da solução</a></li>
+
