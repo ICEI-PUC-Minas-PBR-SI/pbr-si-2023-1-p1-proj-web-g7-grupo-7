@@ -1,5 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10303892&assignment_repo_type=AssignmentRepo)
-# Marketing Place para vendedor
+# Mex - Multi Express
 
 `CURSO: Sistemas de Informação`
 
@@ -24,8 +24,9 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 ## Orientador
 
 * Cristiano Geraldo Teixeira Silva
+* Fabio Leandro Rodrigues Cordeiro
 * Franciele Cristina Parreiras Rodrigues
-*
+
 
 # Planejamento
 
