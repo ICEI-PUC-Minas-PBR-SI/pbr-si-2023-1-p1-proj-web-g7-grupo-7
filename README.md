@@ -1,4 +1,4 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10303892&assignment_repo_type=AssignmentRepo)
+
 # Mex - Multi Express
 
 `CURSO: Sistemas de Informação`
@@ -7,7 +7,7 @@
 
 `SEMESTRE: 1º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+A pretensão deste projeto é desenvolver uma plataforma de vendas personalizadas, denominada como MEX (Multi Express), que auxiliará o comerciante no momento da venda, por meio de um ambiente que permita a interação entre este e o cliente, de forma que o consumidor consiga ver os produtos e fazer todo o processo de compra através do perfil do vendedor na plataforma. 
 
 ## Integrantes
 
