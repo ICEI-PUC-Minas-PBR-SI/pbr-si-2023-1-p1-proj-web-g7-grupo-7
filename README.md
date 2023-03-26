@@ -16,7 +16,6 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 * Fernanda Evangelista Machado
 * Jean Carlo Machado de Oliveira
 * Lorrainy Pâmela Siqueira Ferreira
-* Lucas Braga de Almeida
 * Marcos Vinícius Campos de Oliveira
 * Matheus Filipe Alves
 
