@@ -33,9 +33,10 @@ As tabelas abaixo que se seguem apresentam os requisitos funcionais e não funci
 |001| Permitir que o usuário realize cadastro de perfil | ALTA |  |
 |002| Permitir que o usuário realize cadastro de produtos | ALTA |  |
 |003| Permitir que o usuário realize cadastro de vendas| ALTA |  |
-|004| Permitir que o usuário controle estoque| ALTA |  |
-|005| Emitir um relatório de vendas no mês   | ALTA | |
-|006| Emitir um relatório de estoque   | ALTA | |
+|004| Acrescentar usuário realiza login| ALTA |  |
+|005| Permitir que o usuário controle estoque| ALTA |  |
+|006| Emitir um relatório de vendas no mês   | ALTA | |
+|007| Emitir um relatório de estoque   | ALTA | |
 
 
 ### Requisitos não Funcionais
