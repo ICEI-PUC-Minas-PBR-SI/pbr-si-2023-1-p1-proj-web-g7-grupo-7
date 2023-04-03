@@ -20,6 +20,11 @@ Com base nas personas, a história dos usuários foi construída com a seguinte 
 |Microempresário  | Transferir meu processo de vendas para o virtual.         |Que seja possível um controle de estoque, compra e venda de produtos, facilidade de acesso, contabilização de resultados e maior divulgação.            |
 |Vendedora Autônoma      | De um novo ambiente digital que viabilize todos os passos de meu processo de compra| Alavancar, organizar e otimizar minhas vendas  |
 
+## Diagrama de Caso de Uso
+
+O diagrama abaixo representa o funcionamento de nosso sistema.
+
+![WhatsApp Image 2023-04-03 at 20 53 24](https://user-images.githubusercontent.com/57223249/229652003-2c37a727-1ce7-4c00-96bb-6b0972290170.jpeg)
 
 
 ## Requisitos
