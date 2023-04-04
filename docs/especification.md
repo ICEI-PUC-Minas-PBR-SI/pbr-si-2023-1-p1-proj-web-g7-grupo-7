@@ -3,6 +3,11 @@
 Nesta parte do artigo serão definidas as personas, as histórias de usuários, os requisitos funcionais e não funcionais e as restrições do projeto.
 Pesquisas por meio de artigos, redes sociais e entrevistas permitiram a construção de duas personas, as quais darão norte para a criação e estruturação da plataforma MEX (Multi Express), uma vez que estas ilustram de forma específica qual será o perfil principal de clientes da MEX (Multi Express). São elas: 
 
+Video Picth sobre o trabalho:
+
+https://user-images.githubusercontent.com/57223249/229767926-baabcba4-e38a-4dd3-840e-19a4173a4217.mp4
+
+
 
 ## Personas
 
