@@ -29,7 +29,8 @@ Com base nas personas, a história dos usuários foi construída com a seguinte 
 
 O diagrama abaixo representa o funcionamento de nosso sistema.
 
-![WhatsApp Image 2023-04-03 at 20 53 24](https://user-images.githubusercontent.com/57223249/229652003-2c37a727-1ce7-4c00-96bb-6b0972290170.jpeg)
+![WhatsApp Image 2023-04-22 at 20 38 29](https://user-images.githubusercontent.com/126531519/234441535-2e586b41-86f2-4639-8250-8496809473c3.jpeg)
+
 
 
 ## Requisitos
