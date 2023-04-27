@@ -18,6 +18,7 @@ A pretensão deste projeto é desenvolver uma plataforma de vendas personalizada
 * Lorrainy Pâmela Siqueira Ferreira
 * Marcos Vinícius Campos de Oliveira
 * Matheus Filipe Alves
+* Pedro Lucas Serra Moura
 
 
 ## Orientador
