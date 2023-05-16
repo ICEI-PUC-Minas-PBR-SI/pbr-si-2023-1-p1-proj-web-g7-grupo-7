@@ -19,7 +19,7 @@ A pretensão deste projeto é desenvolver uma plataforma de vendas personalizada
 * Marcos Vinícius Campos de Oliveira
 * Matheus Filipe Alves
 * Pedro Lucas Serra Moura
-* Gabriel Fernandes
+* Gabriel Fernandes de Araujo
 
 
 ## Orientador
