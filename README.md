@@ -20,7 +20,7 @@ A pretensão deste projeto é desenvolver uma plataforma de vendas personalizada
 * Matheus Filipe Alves
 * Pedro Lucas Serra Moura
 * Gabriel Fernandes de Araujo
-teste
+
 
 ## Orientador
 
