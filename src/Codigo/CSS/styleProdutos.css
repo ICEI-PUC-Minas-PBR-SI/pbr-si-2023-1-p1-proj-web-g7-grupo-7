@@ -65,9 +65,9 @@ footer {
     background-color: #eeeeee;
 }
 
-.conteudo h1{
+.conteudo h1 {
 
-font-weight: bold;
+    font-weight: bold;
 
 }
 
@@ -98,7 +98,7 @@ font-weight: bold;
     font-family: 'Poppins', sans-serif;
 }
 
-.detalhesProdutos{
+.detalhesProdutos {
 
 
     text-decoration: none;
@@ -107,23 +107,23 @@ font-weight: bold;
 
 }
 
-.detalhesProdutos:hover{
+.detalhesProdutos:hover {
 
 
     text-decoration: none;
     color: #000;
 }
 
-.produto-footer{
+.produto-footer {
 
     margin-top: 10px;
     text-align: center;
-    background-color:#000000;
+    background-color: #000000;
     text-decoration: none;
 
 }
 
-.produto-footer a{
+.produto-footer a {
 
 
     color: #fff;
@@ -134,7 +134,7 @@ font-weight: bold;
 
 }
 
-.produto-footer a:hover{
+.produto-footer a:hover {
 
     color: #ff6026;
 }
@@ -211,7 +211,7 @@ font-weight: bold;
 
 /* hover produtos */
 
-.produto:hover{
+.produto:hover {
 
     transform: scale3d(1.1, 1.1, 1);
     text-decoration: none;
@@ -220,7 +220,7 @@ font-weight: bold;
 
 /*TELA DETALHE PRODUTOS*/
 
-.dproduto{
+.dproduto {
     position: relative;
     overflow: hidden;
     background-color: white;
@@ -238,7 +238,7 @@ font-weight: bold;
     text-align: justify;
 }
 
-.dproduto img{
+.dproduto img {
 
 
     width: 100%;
@@ -246,48 +246,48 @@ font-weight: bold;
     object-fit: cover;
 }
 
-.descricaodoproduto{
+.descricaodoproduto {
 
     display: inline-block;
     width: 50%;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
     font-weight: bolder;
-    font-size: x-large;    
-    
+    font-size: x-large;
+
 }
 
-.valordetalhe{
+.valordetalhe {
 
     color: #ff6026;
-    font-weight: bolder; 
-    font-size:90%;
+    font-weight: bolder;
+    font-size: 90%;
     margin-bottom: 0px;
 }
 
-.condicaodetalhe{
+.condicaodetalhe {
     font-size: small;
 }
 
-.conjuntoprodutodescricao{
+.conjuntoprodutodescricao {
 
     display: flex;
 }
 
-.explicacaoproduto{
+.explicacaoproduto {
 
     margin-top: 30px;
     margin-bottom: 30px;
     font-size: medium;
 }
 
-.comprarDescricao{
+.comprarDescricao {
 
     margin-top: 80px;
     text-align: center;
-    background-color:#000000;
+    background-color: #000000;
     text-decoration: none;
     border-radius: 8px;
-    
+
 }
 
 .comprarDescricao a {
@@ -299,7 +299,7 @@ font-weight: bold;
     font-weight: 600;
 }
 
-.comprarDescricao a:hover{
+.comprarDescricao a:hover {
 
     color: #ff6026;
 }
@@ -320,14 +320,14 @@ font-weight: bold;
         width: 100%;
     }
 
-    .conjuntoprodutodescricao{
+    .conjuntoprodutodescricao {
 
         display: inline-block;
     }
 
-    .dproduto{
+    .dproduto {
 
-       width: 100%;
+        width: 100%;
 
     }
 }
