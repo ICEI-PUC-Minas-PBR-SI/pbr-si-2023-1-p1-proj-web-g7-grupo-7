@@ -38,33 +38,85 @@
             <h2><a class="navbar-brand" href="index.html">Sair</a></h2>
         </div>
     </header>
-    <div class="bg">
-        <div class="container">
-            <div class="conteudo">
-                <h1> Pagamento </h1><br><br>
+    <div class="bg" id="final">
+        <div class="conteudo">
+            <h1> Pagamento </h1><br><br>
+        </div>
+        <div class="container-fluid payment">
+            <h2>Endereço de entrega</h2>
+            <div>
+                <form class="row g-3 endereco">
+                    <div class="col-md-7">
+                        <label for="inputrua" class="form-label">Rua :</label>
+                        <input type="text" class="form-control" id="inputrua">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="inputnumero" class="form-label">n° :</label>
+                        <input type="text" class="form-control" id="inputnumero">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="inputbairro" class="form-label">Bairro :</label>
+                        <input type="text" class="form-control" id="inputbairro">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputcidade" class="form-label">Cidade :</label>
+                        <input type="text" class="form-control" id="inputcidade">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="inputuf" class="form-label">UF :</label>
+                        <input type="text" class="form-control" id="inputuf">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="inputcep" class="form-label">CEP</label>
+                        <input type="text" class="form-control" id="inputcep">
+                    </div>
+                </form>
+            </div>
+            <h2>Dados do cartão</h2>
+            <div>
+                <form class="row g-3 cartao">
+                    <div class="col-md-12">
+                        <label for="inputncard" class="form-label">Número do cartão :</label>
+                        <input type="text" class="form-control" id="inputncard">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="inputvcard" class="form-label">Validade :</label>
+                        <input type="text" class="form-control" id="inputvcard">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="inputcvc" class="form-label">CVC :</label>
+                        <input type="text" class="form-control" id="inputcvc">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="inputnomecard" class="form-label">Nome do titular :</label>
+                        <input type="text" class="form-control" id="inputnomecard">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Finalizar compra</button>
+                      </div>
+                </form>
+
+
             </div>
 
-
         </div>
-
-    </div>
-    <!--Rodapé-->
-    <footer class="page-footer fixed bg-danger">
-        <div class="container">
-            <hr class="bg-hex" style="margin: 0 15%;">
-            <div class="row d-flex text-center justify-content-center  mb-md-0 mb-4 ">
-                <div class="col-md-8 col-12 mt-5">
-                    <p style="line-height: 1.7rem; color: white;">Multi Express <br>Contato: mex@gmail.com.br</p>
+        <!--Rodapé-->
+        <footer class="page-footer fixed bg-danger">
+            <div class="container">
+                <hr class="bg-hex" style="margin: 0 15%;">
+                <div class="row d-flex text-center justify-content-center  mb-md-0 mb-4 ">
+                    <div class="col-md-8 col-12 mt-5">
+                        <p style="line-height: 1.7rem; color: white;">Multi Express <br>Contato: mex@gmail.com.br</p>
+                    </div>
                 </div>
+                <hr class="clearfix d-md-none bg-white " style="margin: 10% 15% 5%;">
+                <!-- Copyright -->
+                <div class="footer-copyright text-center py-3" style="color: white;">© 2019 Copyright: Bootstrap<br>
+                </div>
+                <br>
+                <!-- Copyright -->
             </div>
-            <hr class="clearfix d-md-none bg-white " style="margin: 10% 15% 5%;">
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3" style="color: white;">© 2019 Copyright: Bootstrap<br>
-            </div>
-            <br>
-            <!-- Copyright -->
-        </div>
-    </footer>
+        </footer>
 </body>
 
 </html>

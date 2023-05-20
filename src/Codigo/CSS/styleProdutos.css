@@ -331,3 +331,44 @@ footer {
 
     }
 }
+
+/* tela pagamento*/
+
+.payment{
+    margin: 0px 60px;
+    margin-bottom: 20px;
+}
+
+#final h2{
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+.endereco input{
+    color: black;
+    font-weight: bold;
+}
+
+.cartao input{
+    color: black;
+    font-weight: bold;
+}
+
+.endereco{
+    align-items: center;
+    justify-items: center;
+    justify-content: left;
+    align-content: center;
+    padding: 0px 300px;
+    margin-bottom: 30px;
+}
+
+.cartao{
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 0px 450px;
+    
+}
