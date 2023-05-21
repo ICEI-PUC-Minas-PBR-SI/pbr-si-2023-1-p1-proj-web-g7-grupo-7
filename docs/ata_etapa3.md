@@ -4,3 +4,5 @@ Gabriel fernandes
 Pedro Lucas
     Responsável pela tela de pagamento na finalização de um processo de venda, a tela conta com os dados de entrega e dados do cartão de crédito.
 
+Jean Carlo Machado
+    Responsável pela tela do carrinho de compras. A tela conta com os objetos desejados, a quantidade e o valor total.
