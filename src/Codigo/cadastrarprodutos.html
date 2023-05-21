@@ -1,175 +1,142 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/style.css">
-    <title>MEX</title>
-</head>
-<body>
-    <!--CABEÇALHO NAV BAR -->
-    <header class="navbar sticky-top navbar-dark navBar static-top">
-        <img class="logo" src="IMG/logo.png" alt="Logo">
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/styleCadastrarprodutos.css">
+        <title>MEX</title>
+    </head>
+    <body>
+        <!--CABEÇALHO NAV BAR -->
+        <header class="navbar sticky-top navbar-dark navBar static-top">
+            <img class="logo" src="IMG/logo.png" alt="Logo">
+    
+            <div class="buttons">
+                <h2><a class="navbar-brand" href="inicio.html">Inicio</a></h2>
+                <h2><a class="navbar-brand" href="cadastrarprodutos.html">Cadastrar</a></h2>
+                <h2><a class="navbar-brand" href="index.html">Sair</a></h2>
+            </div>
+        </header>
 
-        <div class="buttons">
-            <h2><a class="navbar-brand" href="inicio.html"></a></h2>
-            <h2><a class="navbar-brand" href="i#"></a></h2>
-            <h2><a class="navbar-brand" href="index.html">Sair</a></h2>
-        </div>
-    </header>
+        <!--CADASTRO DE PRODUTOS EM 2 COLUNAS-->
+        <!--1ª COLUNA-->
+
+    <h1>Cadastro de Produtos</h1>
     <div class="container">
-        <div class="conteudo">
-                <div class="container">
-                <nav class="navbar navbar-expand-xl bg-body-tertiary">
-                  <div class="container-fluid">
-                 <a class="navbar-brand" href="#">Cadastro de Produtos</a>
-                   
-                  
-            <label for="exampleDataList" class="form-label"></label>
-           <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Pesquisar">
-           <datalist id="datalistOptions">
-           <option value="bicicleta">
-           <option value="bola">
-           <option value="roupas femininas">
-           <option value="celular">
-           <option value="geladeira">
-           </datalist>
-           
-           <form class="container-fluid justify-content-start">
-            <input class="btn btn-light" type="button" value="Cadastrar">
-            <input class="btn btn-light" type="submit" value="Alterar">
-            <input class="btn btn-light" type="submit" value="Salvar">
-            <input class="btn btn-light" type="reset" value="Excluir">
-            </form>
-           <nav class="navbar bg-body-tertiary">
-            </div>
-         </nav>    
-          <form class="container-fluid justify-content-start">       
-        </form>
-        </div>
-        <div class ="row">
-        </div>
-
-        <form>
-        <div class="row">
-        <div class = "my-lg-5 col">
-            <label classs="form-label">Código</label>
-            <input class="form-control" type="text" name="f-codigo/">
-         </div>
-
-         <div class = "my-lg-5  col">
-            <label classs="form-label">Produto</label>
-            <input class="form-control" type="text" name="f-produto/">
-         </div>
-         <div class = "my-lg-5 col">
-            <label classs="form-label">Categoria</label>
-            <input class="form-control" type="text" name="f-categoria/">
-         </div>
-
-         <div class = "my-lg-5  col">
-            <label classs="form-label">Sub-categoria</label>
-            <input class="form-control" type="text" name="f-sub-categoria/">
-         </div>
-         </div>
-        </form>
-
-        <form>
-            <div class="row">
-            <div class = "my-lg-5 col">
-                <label classs="form-label">Preço/Venda</label>
-                <input class="form-control" type="text" name="f-preco-venda/">
-             </div>
-    
-             <div class = "my-lg-5 col">
-                <label classs="form-label">Preço/Custo</label>
-                <input class="form-control" type="text" name="f-preco-custo/">
-             </div>
-             <div class = "my-lg-5 col">
-                <label classs="form-label">Lucro</label>
-                <input class="form-control" type="text" name="f-lucro/">
-             </div>
-    
-             <div class = "my-lg-5 col">
-                <label classs="form-label">Estoque</label>
-                <input class="form-control" type="text" name="f-estoque/">
-             </div>
-             <div class = "my-lg-5 col">
-                <label classs="form-label">Unidade</label>
-                <input class="form-control" type="text" name="f-unidade/">
-             </div>
-            </div>
-            </form>
-
-            <form>
-                <div class="row">
-                <div class = "my-lg-5 col">
-                    <label classs="form-label">Tamanho</label>
-                    <input class="form-control" type="text" name="f-tamanho/">
-                 </div>
-        
-                 <div class = "my-lg-5 col">
-                    <label classs="form-label">Cor</label>
-                    <input class="form-control" type="text" name="f-cor/">
-                 </div>
-                 <div class = "my-lg-5 col">
-                    <label classs="form-label">Material</label>
-                    <input class="form-control" type="text" name="f-material/">
-                 </div>
-        
-                 <div class = "my-lg-5 col">
-                    <label classs="form-label">Capacidade</label>
-                    <input class="form-control" type="text" name="f-sub-capacidade/">
-                 </div>
-                 <div class = "my-lg-5 col">
-                    <label classs="form-label">Voltagem</label>
-                    <input class="form-control" type="text" name="f-voltagem/">
-                 </div>
+              <div class="col">
+                    <div class="form-group">
+                    <label for="codigo">Código:</label>
+                    <input type="text" id="codigo" name="codigo" required>
                 </div>
-                </form>
-                
-                <form>
-                    <div class="row">
-                    <div class = "my-lg-5 col">
-                        <label classs="form-label">Marca</label>
-                        <input class="form-control" type="text" name="f-marca/">
-                     </div>
-            
-                     <div class = "my-lg-5 col">
-                        <label classs="form-label">Fornecedor</label>
-                        <input class="form-control" type="text" name="f-fornecedor/">
-                     </div>
-                     <div class = "my-lg-5 col">
-                        <label classs="form-label">Nacionalidade</label>
-                        <input class="form-control" type="text" name="f-nacionalidade/">
-                     </div>
-                     </div>
-                    </form>
 
-                    <form>
-                        <div class="row">
-                        <div class = "my-lg-5 col">
-                            <label classs="form-label">Caracteristicas do Produto</label>
-                            <input class="form-control" type="text" name="f-caracteristica/">
-                         </div>            
-                    </form>
+                <div class="form-group">
+                    <label for="produto">Produto:</label>
+                    <input type="text" id="produto" name="produto" required>
+                </div>
 
-             </div>              
-          </nav>
+                <div class="form-group">
+                    <label for="categoria">Categoria:</label>
+                    <input type="text" id="categoria" name="categoria" required>
+                </div>
 
+                <div class="form-group">
+                    <label for="subcategoria">Subcategoria:</label>
+                    <input type="text" id="subcategoria" name="subcategoria" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="marca">Marca:</label>
+                    <input type="text" id="marca" name="marca" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" name="modelo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tamanho">Tamanho:</label>
+                    <input type="text" id="tamanho" name="tamanho" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cor">Cor:</label>
+                    <input type="text" id="cor" name="cor" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="material">Material:</label>
+                    <input type="text" id="material" name="material" required>
+                </div>
+                <div class="form-group">
+                    <label for="fornecedor">Fornecedor:</label>
+                    <input type="text" id="fornecedor" name="fornecedor" required>
+                </div>                            
+            </form>
         </div>
 
-    </div>
- 
+        <!--CADASTRO DE PRODUTOS EM 2 COLUNAS-->       
+        <!--2ª COLUNA-->
 
-    <div class="text-center">
-        <img src="fone.webp" class="rounded" alt="...">
-      </div>
-    <!--Rodapé-->
+        <div class="col">
+            <div class="form-group">
+                <label for="preco-venda">Preço de Venda:</label>
+                <input type="text" id="preco-venda" name="preco-venda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="preco-custo">Preço de Custo:</label>
+                <input type="text" id="preco-custo" name="preco-custo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lucro">Lucro:</label>
+                <input type="text" id="lucro" name="lucro" required>
+            </div>
+
+            <div class="form-group">
+                <label for="estoque">Estoque:</label>
+                <input type="text" id="estoque" name="estoque" required>
+            </div>                  
+                         
+            <div class="form-group">
+                    <label for="unidade">Unidade:</label>
+                    <input type="text" id="unidade" name="unidade" required>
+            </div>                     
+
+            <div class="form-group">
+                    <label for="capacidade">Capacidade:</label>
+                    <input type="text" id="capacidade" name="capacidade" required>
+            </div>
+
+            <div class="form-group">
+                    <label for="voltagem">Voltagem:</label>
+                    <input type="text" id="voltagem" name="voltagem" required>
+            </div>
+
+            <!--BOTÃO PARA ALTERAÇÕES NO CADASTRO DE PRODUTOS-->
+
+               <div class="buttons">
+                 <button id="buscar">Buscar</button>
+                 <button id="cadastrar">Cadastrar</button>
+                 <button id="alterar">Alterar</button>
+                 <button id="salvar">Salvar</button>
+                 <button id="excluir">Excluir</button>
+               </div>
+            <!--INPUT COM INFORMAÇÕES DO PRODUTO-->   
+               <div class="input-group">
+                <span class="input-group-text"><img src="img/fone.webp" class="rounded float-right" alt="..."></span>
+                <textarea class="form-control" aria-label="With textarea">Informações do Produto</textarea>
+              </div>
+        </div>
+    </div>
+<!--Rodapé-->
     <footer class="page-footer fixed bg-danger">
         <div class="container">
             <hr class="bg-hex" style="margin: 0 15%;">
