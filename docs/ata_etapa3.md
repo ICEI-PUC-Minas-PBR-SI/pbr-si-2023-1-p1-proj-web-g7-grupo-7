@@ -12,3 +12,6 @@ Alexsander Rodrigues
 Jean Carlo Machado 
     Responsável pela tela do carrinho de compras. A tela conta com os objetos desejados, a quantidade e o valor total.
 
+Matheus Filipe Alves
+    Responsável pela tela de produtos e o início da tela de detalhe de produtos.
+
