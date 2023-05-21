@@ -1,0 +1,56 @@
+/* Estilo para o cabeçalho */
+header {
+    background-image: linear-gradient(-85deg,#ff6026 0%,#ffe800 100%);
+    z-index: 1000;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilo para a logo */
+.logo {
+    width: 100px;
+}
+
+/* Estilo para os botões */
+.buttons {
+    display: flex;
+}
+
+.buttons a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.4s;
+}
+
+.buttons a:hover {
+    
+    color: #fff;
+}
+.conteudo {
+    flex: 1;
+    padding: 20px;
+  }
+footer {
+    background-image: linear-gradient(-85deg,#ff6026 0%,#ffe800 100%);
+    color:#fff;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Media queries para tornar o cabeçalho responsivo */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .buttons {
+        margin-top: 10px;
+    }
+}
