@@ -12,3 +12,5 @@ Alexsander Rodrigues
 Jean Carlo Machado 
     Responsável pela tela do carrinho de compras. A tela conta com os objetos desejados, a quantidade e o valor total.
 
+Marcos Vinícius Campos de Oliveira 
+    responsavel pela segunda tabela com as informações de vendas na tela de Controle de Vendas 
