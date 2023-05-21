@@ -63,6 +63,7 @@ footer {
 .bg {
 
     background-color: #eeeeee;
+
 }
 
 .conteudo h1 {
@@ -217,9 +218,24 @@ footer {
     text-decoration: none;
 }
 
-
+/* Parte do Gabriel Fernandes*/
 /*TELA DETALHE PRODUTOS*/
+.bg2{
+    background-color: #eeeeee;
+    padding-bottom: 20%;
+}
 
+.conjuntoprodutodescricao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: solid 1px black;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #eeeeee;
+    border-radius: 5px;
+}
+
+/*carrosel com imagens do produto*/
 .dproduto {
     position: relative;
     overflow: hidden;
@@ -236,21 +252,23 @@ footer {
     font-family: 'Poppins', sans-serif;
     display: inline-block;
     text-align: justify;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 86%;
+    margin: 30px;
 }
 
-.dproduto img {
-
-
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/* quantidade, nome, preço*/
 .descricaodoproduto {
-
-    display: inline-block;
-    width: 50%;
-    margin-bottom: 15px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 90%;
+    margin-top: 5%;
+    margin-bottom: 30px;
     font-weight: bolder;
     font-size: x-large;
 
@@ -260,7 +278,7 @@ footer {
 
     color: #ff6026;
     font-weight: bolder;
-    font-size: 90%;
+    font-size: 150%;
     margin-bottom: 0px;
 }
 
@@ -268,9 +286,22 @@ footer {
     font-size: small;
 }
 
-.conjuntoprodutodescricao {
+.quantidade{
+    width: 10%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(128, 127, 127, 0.7);
+}
 
-    display: flex;
+/*descrição do produto*/
+.descricao2{
+    width: 86%;
+
+    margin-left: 5%;
+    text-align: justify;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 .explicacaoproduto {
@@ -280,6 +311,56 @@ footer {
     font-size: medium;
 }
 
+/*carrosel de produtos recomendados*/
+
+.dproduto2{
+    position: relative;
+    overflow: hidden;
+    background-color: whitesmoke;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    padding: 0px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    width: 500px;
+    height: 700px;
+    box-shadow: 0px 0px 5px rgba(128, 127, 127, 0.7);
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    text-align: justify;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 86%;
+    margin: 30px;
+
+}
+
+.dproduto img {
+
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card{
+    width: 90%;
+    height: 10%; 
+    padding: 5%;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: white;
+    margin: 0 auto;  
+}
+
+div.card > img{
+    display: block;
+    border-radius: 4px;
+}
+
+/* Botao comprar*/
 .comprarDescricao {
 
     margin-top: 80px;
@@ -303,7 +384,6 @@ footer {
 
     color: #ff6026;
 }
-
 /* Media queries para tornar a página responsiva */
 @media (max-width: 768px) {
     header {
@@ -330,7 +410,12 @@ footer {
         width: 100%;
 
     }
+    .conjuntoprodutodescricao {
+        margin-left: 4%;
+    }
 }
+
+/* Fim da parte doParte do Gabriel Fernandes*/
 
 /* tela pagamento*/
 
