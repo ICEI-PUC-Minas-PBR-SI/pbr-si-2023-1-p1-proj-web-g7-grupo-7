@@ -4,3 +4,5 @@ Gabriel fernandes
 Pedro Lucas
     Responsável pela tela de pagamento na finalização de um processo de venda, a tela conta com os dados de entrega e dados do cartão de crédito.
 
+Alexsander Rodrigues
+    Responsável pelos dados das compras, na tela de Controle de Vendas.
