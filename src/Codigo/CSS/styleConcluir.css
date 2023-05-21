@@ -1,0 +1,172 @@
+/* Estilo para o cabeçalho */
+header {
+    background-image: linear-gradient(-85deg, #ff6026 0%, #ffe800 100%);
+    z-index: 1000;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilo para a logo */
+.logo {
+    width: 100px;
+}
+
+/* Estilo para os botões */
+.buttons {
+    display: flex;
+}
+
+.buttons a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.4s;
+}
+
+.buttons a:hover {
+
+    color: #fff;
+}
+
+.conteudo {
+    flex: 1;
+    padding: 20px;
+}
+
+footer {
+    background-image: linear-gradient(-85deg, #ff6026 0%, #ffe800 100%);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Media queries para tornar o cabeçalho responsivo */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .buttons {
+        margin-top: 10px;
+    }
+}
+
+/* Jean */
+main .Jean_Main{
+    padding: 0 30px;
+
+
+}
+
+main .Jean_Titulo {
+    font-size: 40px;
+    padding: 20px 0;
+    text-align: center;
+
+}
+
+main .Jean_Content {
+    display: flex;
+    padding: 30px;
+}
+
+main .Jean_Section {
+    flex: 1;
+}
+
+main .Jean_Janela{
+    min-width: 450px;
+    background-color: #ff6c37;
+    border-radius: 6px;
+    padding: 30px;
+
+}
+
+main .Jean_Table {
+    width: 100%;
+}
+
+main .Jean_Table thead tr th {
+    text-align: left;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    color: #444;
+
+
+}
+
+main .Jean_Table thead tr {
+    border: 3px solid #bbb;
+    background-color: #eee; 
+
+}
+main .Jean_Table thead tr th{
+    border: 3px solid #bbb;
+    background-color: #eee; 
+
+}
+
+main .Jean_Table tbody tr {
+    border: 3px solid #bbb;
+    border-radius: 6px;
+    background-color: #eee;
+    
+}
+main .Jean_Table tbody tr th {
+    border: 3px solid #bbb;
+    
+}
+
+main .Jean_Produto {
+    display: flex;
+    align-items: center;
+}
+
+main .Jean_Produto img {
+    border-radius: 6px;
+
+}
+
+main .Jean_Nome {
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+main .Jean_Categoria {
+    font-size: 15px;
+    margin-left: 15px;
+    color: #aaa;
+}
+main .Jean_Continuar{
+background-color: black;
+color: #eee;
+width: 100%;
+padding: 20px 0;
+border-radius: 6px;
+border: 3px solid #ccc
+}
+main .Jean_Centro{
+padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+main .Jean_Centro div{ 
+    display: flex;
+    justify-content: space-between;
+}
+main .Jean_Aside{
+margin-bottom: 15px;
+border-bottom: 1px solid ;
+padding: 15px 20px;
+font-size: 20px;
+
+}
+
+.Jean_Janela{
+    border: 3px solid #ccc
+}
