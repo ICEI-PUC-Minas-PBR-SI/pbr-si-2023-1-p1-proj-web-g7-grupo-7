@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/stylelogin.css">
+    <link rel="stylesheet" href="CSS/styleVendas.css">
+    <link rel="stylesheet" href="js/controleVendas.js">
+    <title>MEX | Controle de Vendas</title>
+</head>
+<body>
+    <!--CABEÇALHO NAV BAR -->
+    <header class="navbar sticky-top navbar-dark navBar static-top">
+        <img class="logo" src="IMG/logo.png" alt="Logo">
+
+        <div class="buttons">
+            <h2><a class="navbar-brand" href="inicio.html"></a></h2>
+            <h2><a class="navbar-brand" href="i#"></a></h2>
+            <h2><a class="navbar-brand" href="inicio.html">Sair</a></h2>
+        </div>
+    </header>
+    
+    <div class="container"><br>
+        <div class="titulo">
+            <h1> Tela de Controle de Vendas</h1><br><br><hr>
+        </div>
+        <div class="dados">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Código de venda</th>
+                        <th>Data da venda</th>
+                        <th>Valor do produto</th>
+                        <th>Valor total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Gabriel</td>
+                        <td>007</td>
+                        <td>05/03/2023 18:37</td>
+                        <td>R$3.269,65</td>
+                        <td>R$3.269,65</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Tiago</td>
+                        <td>666</td>
+                        <td>10/04/2023 13:25</td>
+                        <td>R$156,79</td>
+                        <td>R$627,16</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Miguel</td>
+                        <td>482</td>
+                        <td>17/05/2023 08:33</td>
+                        <td>R$7.999,00</td>
+                        <td>R$7.999,00</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Larissa</td>
+                        <td>047</td>
+                        <td>24/05/2023 12:10</td>
+                        <td>R$49,90</td>
+                        <td>R$299,40</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="vendas">
+         <div class="menu">
+            <div class="row">
+                <div class="col">
+                    <h4>ID</h4>
+                </div>
+                <div class="col">
+                    <h4>Código de Venda</h4>
+                </div>
+                <div class="col">
+                    <h4>Produto</h4>
+                </div>
+                <div class="col">
+                    <h4>Quantidade</h4>
+                </div>
+                <div class="col">
+                    <h4>Preço Unitário</h4>
+                </div>
+                <div class="col">
+                    <h4>Total</h4>
+                </div>
+               </div>
+         </div>
+           <div class="row">
+            <div class="col">
+                <p>1</p>
+            </div>
+            <div class="col">
+                <p>007</p>
+            </div>
+            <div class="col">
+                <p>Iphone 11</p>
+            </div>
+            <div class="col">
+                <p>1</p>
+            </div>
+            <div class="col">
+                <p>R$3.269,65</p>
+            </div>
+            <div class="col">
+                <p>R$3.269,65</p>
+            </div>
+           </div>
+           <div class="row">
+            <div class="col">
+                <p>2</p>
+            </div>
+            <div class="col">
+                <p>666</p>
+            </div>
+            <div class="col">
+                <p>Whisky Jack Daniels</p>
+            </div>
+            <div class="col">
+                <p>4</p>
+            </div>
+            <div class="col">
+                <p>R$156,79</p>
+            </div>
+            <div class="col">
+                <p>R$627,16</p>
+            </div>
+           </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>3</p>
+            </div>
+            <div class="col">
+                <p>482</p>
+            </div>
+            <div class="col">
+                <p>MacBook Pro</p>
+            </div>
+            <div class="col">
+                <p>1</p>
+            </div>
+            <div class="col">
+                <p>R$7.999,00</p>
+            </div>
+            <div class="col">
+                <p>R$7.999,00</p>
+            </div>
+           </div>
+           <div class="row">
+            <div class="col">
+                <p>4</p>
+            </div>
+            <div class="col">
+                <p>047</p>
+            </div>
+            <div class="col">
+                <p>Camisa T-Shirt</p>
+            </div>
+            <div class="col">
+                <p>6</p>
+            </div>
+            <div class="col">
+                <p>R$49,90</p>
+            </div>
+            <div class="col">
+                <p>R$299,40</p>
+            </div>
+           </div>
+        </div> 
+        </div>  
+    </div><br>
+    <!--Rodapé-->
+    <footer class="page-footer fixed bg-danger">
+        <div class="container">
+            <hr class="bg-hex" style="margin: 0 15%;">
+            <div class="row d-flex text-center justify-content-center  mb-md-0 mb-4 ">
+                <div class="col-md-8 col-12 mt-5">
+                    <p style="line-height: 1.7rem; color: white;">Multi Express <br>Contato: mex@gmail.com.br</p>
+                </div>
+            </div>
+            <hr class="clearfix d-md-none bg-white " style="margin: 10% 15% 5%;">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3" style="color: white;">© 2019 Copyright: Bootstrap<br>
+            </div>
+            <br>
+            <!-- Copyright -->
+        </div>
+    </footer>
+</body>
+</html>
