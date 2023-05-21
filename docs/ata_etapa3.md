@@ -15,3 +15,5 @@ Jean Carlo Machado
 Matheus Filipe Alves
     Responsável pela tela de produtos e o início da tela de detalhe de produtos.
 
+Elenice Florentina de Oliveira dos Reis
+     Responsável pela tela de cadastro de produtos, tela com caracteristicas e foto do produto a ser cadastrado.
