@@ -16,7 +16,13 @@
         <!--CABEÇALHO NAV BAR -->
         <header class="navbar sticky-top navbar-dark navBar static-top">
             <img class="logo" src="IMG/logo.png" alt="Logo">
-    
+            <h1 class="title">Multi Express</h1>
+            <div class="search">
+                <input type="text" id="pesquisa" name="pesquisa" placeholder="Pesquisar">
+                <button id="lupa"><img src="IMG/lupa.png" alt="Lupa"></button>
+            </div>
+            <p class="user">Usuário</p>
+            <p id="id">003</p>
             <div class="buttons">
                 <h2><a class="navbar-brand" href="/src/Codigo/inicio.html">Inicio</a></h2>
                 <h2><a class="navbar-brand" href="/src/Codigo/cadastrarprodutos.html">Cadastrar</a></h2>
@@ -46,38 +52,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="subcategoria">Subcategoria:</label>
-                    <input type="text" id="subcategoria" name="subcategoria" required>
-                </div>
-
-                <div class="form-group">
                     <label for="marca">Marca:</label>
                     <input type="text" id="marca" name="marca" required>
                 </div>
-
-                <div class="form-group">
-                    <label for="modelo">Modelo:</label>
-                    <input type="text" id="modelo" name="modelo" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="tamanho">Tamanho:</label>
-                    <input type="text" id="tamanho" name="tamanho" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="cor">Cor:</label>
-                    <input type="text" id="cor" name="cor" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="material">Material:</label>
-                    <input type="text" id="material" name="material" required>
-                </div>
-                <div class="form-group">
-                    <label for="fornecedor">Fornecedor:</label>
-                    <input type="text" id="fornecedor" name="fornecedor" required>
-                </div>                            
+                          
             </form>
         </div>
 
@@ -86,18 +64,8 @@
 
         <div class="col">
             <div class="form-group">
-                <label for="preco-venda">Preço de Venda:</label>
-                <input type="text" id="preco-venda" name="preco-venda" required>
-            </div>
-
-            <div class="form-group">
-                <label for="preco-custo">Preço de Custo:</label>
-                <input type="text" id="preco-custo" name="preco-custo" required>
-            </div>
-
-            <div class="form-group">
-                <label for="lucro">Lucro:</label>
-                <input type="text" id="lucro" name="lucro" required>
+                <label for="preco">Preço de Venda:</label>
+                <input type="text" id="preco" name="preco" required>
             </div>
 
             <div class="form-group">
@@ -105,21 +73,6 @@
                 <input type="text" id="estoque" name="estoque" required>
             </div>                  
                          
-            <div class="form-group">
-                    <label for="unidade">Unidade:</label>
-                    <input type="text" id="unidade" name="unidade" required>
-            </div>                     
-
-            <div class="form-group">
-                    <label for="capacidade">Capacidade:</label>
-                    <input type="text" id="capacidade" name="capacidade" required>
-            </div>
-
-            <div class="form-group">
-                    <label for="voltagem">Voltagem:</label>
-                    <input type="text" id="voltagem" name="voltagem" required>
-            </div>
-
             <!--BOTÃO PARA ALTERAÇÕES NO CADASTRO DE PRODUTOS-->
 
                <div class="buttons">
@@ -132,12 +85,17 @@
 
             <!--INPUT COM INFORMAÇÕES DO PRODUTO-->   
                <div class="input-group">
-                <span class="input-group-text"><img src="img/fone.webp" class="rounded float-right" alt="..."></span>
-                <textarea class="form-control" aria-label="With textarea">Informações do Produto</textarea>
+                <span class="input-group-text"><input type="text" id="img" name="img" placeholder="link da imagem" required></span>
+                <textarea class="form-control" aria-label="With textarea" placeholder="Informações do Produto" id="detalhes"></textarea>
               </div>
         </div>
     </div>
-    <!--Rodapé-->
+    <div id="tela">
+        
+    </div>
+
+
+<!--Rodapé-->
     <footer class="page-footer fixed bg-danger">
         <div class="container-footer">
             <hr class="bg-hex" style="margin: 0 15%;">
@@ -153,6 +111,7 @@
             <br>
         </div>
     </footer>
+    <Script src="JS/produto.js"></Script>
 
 </body>
 </html>
