@@ -13,7 +13,6 @@
 /* Estilo para o cabeçalho */
 header {
     background-image: linear-gradient(-85deg,#ff6026 0%,#ffe800 100%);
-    
     padding: 10px;
     display: flex;
     align-items: center;
