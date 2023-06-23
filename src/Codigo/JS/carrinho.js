@@ -1,3 +1,5 @@
+//se a página esta carregada ou não
+
 if (document.readyState === "loaing") {
     document.addEventListener("DOMContentLoaded")
 } else {
@@ -6,6 +8,7 @@ if (document.readyState === "loaing") {
 
 var ValorTotal = "0,00"
 
+//Realizar somente depois da tela carregar
 function ready() {
     const RemoverBotao = document.getElementsByClassName("J_RemoveButton")
     for (var i = 0; i < RemoverBotao.length; i++) {
@@ -17,15 +20,15 @@ function ready() {
         QuantidadeBotao[i].addEventListener("change", SeForNulo)
     }
 }
-
+//testando
 function SeForNulo(event) {
     if (event.target.value === 0) {
         event.target.parentElement.parentElement.remove()
     }
-    
+
     AtualizarTotal()
 }
-
+//botão de remover produto
 function RemoverProduto(event) {
 
     event.target.parentElement.parentElement.remove()
@@ -33,7 +36,7 @@ function RemoverProduto(event) {
 
 }
 
-
+//atualizar o valor do carrinho no inicio 
 function AtualizarTotal() {
 
     const ProdutoCarrinho = document.getElementsByClassName("J_ProdutoCarrinho")
