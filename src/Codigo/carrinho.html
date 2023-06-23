@@ -18,6 +18,9 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/styleConcluir.css">
 
+    <!--Arquivo JS - Jean Carlo -->
+    <script async src="JS/carrinho.js"> </script>
+
     <title>MEX</title>
 </head>
 
@@ -50,7 +53,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="J_ProdutoCarrinho">
                             <th>
 
                                 <div class="Jean_Produto">
@@ -68,20 +71,18 @@
 
 
                             </th>
-                            <th>R$ 120</th>
+                            <th class="J_ValorProduto">R$ 120,00 </th>
                             <th>
                                 <div class="Jean_qtd">
-                                    <button>-</button>
-                                    <span>quantidade</span>
-                                    <button>+</button>
+                                    <input type="number" value="1" min="1" class="J_Quantidade">
                                 </div>
                             </th>
-                            <th>R$</th>
-                            <th><button>
+                            <th class="J_Subtotal"> </th>
+                            <th><button class="J_RemoveButton">
                                     X
                                 </button></th>
                         </tr>
-                        <tr>
+                        <tr class="J_ProdutoCarrinho">
                             <th>
 
                                 <div class="Jean_Produto">
@@ -96,47 +97,18 @@
                                     </div>
                                 </div>
                             </th>
-                            <th>R$ 120</th>
+                            <th class="J_ValorProduto">R$ 100,90</th>
                             <th>
                                 <div class="Jean_qtd">
-                                    <button>-</button>
-                                    <span>quantidade</span>
-                                    <button>+</button>
+                                    <input type="number" value="3" min="1" class="J_Quantidade">
                                 </div>
                             </th>
-                            <th>R$</th>
-                            <th><button>
+                            <th class="J"> </th>
+                            <th><button class="J_RemoveButton">
                                     X
                                 </button></th>
                         </tr>
-                        <tr>
-                            <th>
 
-                                <div class="Jean_Produto">
-                                    <img src="https://picsum.photos/100/120/">
-                                    <div class="Jean_Info">
-                                        <div class="Jean_Nome">
-                                            produto
-                                        </div>
-                                        <div class="Jean_Categoria">
-                                            color
-                                        </div>
-                                    </div>
-                                </div>
-                            </th>
-                            <th>R$ 120</th>
-                            <th>
-                                <div class="Jean_qtd">
-                                    <button>-</button>
-                                    <span>quantidade</span>
-                                    <button>+</button>
-                                </div>
-                            </th>
-                            <th>R$</th>
-                            <th><button>
-                                    X
-                                </button></th>
-                        </tr>
                     </tbody>
                 </table>
             </section>
@@ -144,18 +116,20 @@
                 <div class="Jean_Janela">
                     <div class="Jean_Aside"> Resumo da compra</div>
                     <div class="Jean_Centro">
-                    <div> <span> Subtotal </span>
-                        <span> R$ 240.00</span></div>
-                    <div>
-                        <span> Frete </span>
-                        <span> gratuito</span></div>
+                        <div> <span> Subtotal </span>
+                            <span class="J_SubTotal"> R$ 240.00</span>
+                        </div>
+                        <div>
+                            <span> Frete </span>
+                            <span> gratuito</span>
+                        </div>
                     </div>
                     <div class="Jean_Rodape">
                         <span>Total</span>
-                        <span>R$ 240.00</span>
+                        <span class="J_Total"></span>
                     </div>
                 </div>
-               <a href="pagamento.html"> <button class="Jean_Continuar">Concluir</button></a>
+                <a href="pagamento.html"> <button class="Jean_Continuar">Concluir</button></a>
 
         </div>
         </aside>
