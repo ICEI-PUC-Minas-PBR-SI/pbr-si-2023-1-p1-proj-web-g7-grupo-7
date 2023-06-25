@@ -26,6 +26,7 @@
 </head>
 
 <body>
+    <script src="JS/cartao.js"></script>
     <!--CABEÇALHO NAV BAR -->
     <header class="navbar sticky-top navbar-dark navBar static-top">
         <a href="#">
@@ -75,9 +76,16 @@
             <h2>Dados do cartão</h2>
             <div>
                 <form class="row g-3 cartao">
-                    <div class="col-md-12">
+                    <div class="col-md-12" onkeyup="verificar()">
                         <label for="inputncard" class="form-label">Número do cartão :</label>
-                        <input type="text" class="form-control" id="inputncard">
+                        <input type="number" class="form-control" id="inputncard" name="inputncard">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="res1">Válido:</label>
+                        <span id="res1"></span>
+                        <br>
+                        <label for="res2">Bandeira:</label>
+                        <span id="res2"></span>
                     </div>
                     <div class="col-md-3">
                         <label for="inputvcard" class="form-label">Validade :</label>
