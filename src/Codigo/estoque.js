@@ -1,46 +1,56 @@
-// Função para buscar os dados do Local Storage
-function leDados() {
-  let dados = localStorage.getItem('db');
-  if (dados) {
-    return JSON.parse(dados);
-  } else {
-    // Retorna um objeto vazio caso não haja dados no Local Storage
-    return {
-      cadastro: []
-    };
-  }
-}
+// Função para buscar os produtos no Local Storage
+function buscarProdutos() {
 
-// Função para buscar um produto pelo código
-function buscarProduto() {
-  let codigo = document.getElementById('codigo').value;
-  let objDados = leDados().cadastro;
+  // Verifica se existe algum produto armazenado no Local Storage
+  if (localStorage.getItem("db")) {
 
-  for (let i = 0; i < objDados.length; i++) {
-    for (let j = 0; j < objDados[i].produto.length; j++) {
-      if (objDados[i].produto[j].codigo === codigo) {
-        let produto = objDados[i].produto[j];
-        document.getElementById('produto').value = produto.nome;
-        document.getElementById('categoria').value = produto.categoria;
-        document.getElementById('marca').value = produto.marca;
-        document.getElementById('preco').value = produto.preco;
-        document.getElementById('estoque').value = produto.estoque;
-        document.getElementById('img').value = produto.img;
-        document.getElementById('detalhes').value = produto.detalhes;
-        return;
+    // Recupera os produtos do Local Storage
+    const produtos = JSON.parse(localStorage.getItem("db"));
+
+    // Obtém os elementos HTML para exibir a foto e as informações do produto
+    const imgInput = document.getElementById("img");
+    const detalhesTextarea = document.getElementById("detalhes");
+
+    // Adiciona um listener de evento ao botão de busca
+    const buscarButton = document.getElementById("buscar");
+    buscarButton.addEventListener("click", function () {
+
+      // Obtém os valores dos inputs de busca
+      const codigoBusca = document.getElementById("codigoBusca").value.trim();
+      const produtoBusca = document.getElementById("produtoBusca").value.trim();
+      const categoriaBusca = document.getElementById("categoriaBusca").value.trim();
+      const marcaBusca = document.getElementById("marcaBusca").value.trim();
+      const precoBusca = document.getElementById("precoBusca").value.trim();
+      const estoqueBusca = document.getElementById("estoqueBusca").value.trim();
+
+      // Filtra os produtos com base nos critérios de busca
+      const produtosFiltrados = produtos.filter(function (produto) {
+        return (
+          (!codigoBusca || produto.codigo.includes(codigoBusca)) &&
+          (!produtoBusca || produto.nome.toLowerCase().includes(produtoBusca.toLowerCase())) &&
+          (!categoriaBusca || produto.categoria.toLowerCase().includes(categoriaBusca.toLowerCase())) &&
+          (!marcaBusca || produto.marca.toLowerCase().includes(marcaBusca.toLowerCase())) &&
+          (!precoBusca || produto.preco.toString().includes(precoBusca)) &&
+          (!estoqueBusca || produto.estoque.toString().includes(estoqueBusca))
+        );
+      });
+
+      // Verifica se encontrou algum produto correspondente à busca
+      if (produtosFiltrados.length > 0) {
+
+        // Exibe o primeiro produto encontrado
+        const produtoEncontrado = produtosFiltrados[0];
+        imgInput.value = produtoEncontrado.imagem;
+        detalhesTextarea.value = `Nome: ${produtoEncontrado.nome}\nCategoria: ${produtoEncontrado.categoria}\nMarca: ${produtoEncontrado.marca}\nPreço de Venda: ${produtoEncontrado.preco}\nEstoque: ${produtoEncontrado.estoque}`;
+      } else {
+        
+        // Caso não tenha encontrado nenhum produto correspondente
+        imgInput.value = "";
+        detalhesTextarea.value = "Nenhum produto encontrado.";
       }
-    }
+    });
   }
-
-  // Se o produto não foi encontrado, limpa os campos
-  document.getElementById('produto').value = '';
-  document.getElementById('categoria').value = '';
-  document.getElementById('marca').value = '';
-  document.getElementById('preco').value = '';
-  document.getElementById('estoque').value = '';
-  document.getElementById('img').value = '';
-  document.getElementById('detalhes').value = '';
 }
 
-//botão de busca
-document.getElementById('buscar').addEventListener('click', buscarProduto);
+// Chama a função para buscar os produtos ao carregar a página
+window.addEventListener("load", buscarProdutos);
