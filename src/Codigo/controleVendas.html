@@ -10,10 +10,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/stylelogin.css">
     <link rel="stylesheet" href="CSS/styleVendas.css">
-    <link rel="stylesheet" href="js/controleVendas.js">
     <title>MEX | Controle de Vendas</title>
 </head>
-<body>
+<body onload="mostrarVendas()">
+
+    <script src="JS/controleVendas.js"></script>
+    <script src="JS/produto.js"></script>
+
     <!--CABEÇALHO NAV BAR -->
     <header class="navbar sticky-top navbar-dark navBar static-top">
         <img class="logo" src="IMG/logo.png" alt="Logo">
@@ -29,59 +32,16 @@
         <div class="titulo">
             <h1> Tela de Controle de Vendas</h1><br><br><hr>
         </div>
-        <div class="dados">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Cliente</th>
-                        <th>Código de venda</th>
-                        <th>Data da venda</th>
-                        <th>Valor do produto</th>
-                        <th>Valor total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Gabriel</td>
-                        <td>007</td>
-                        <td>05/03/2023 18:37</td>
-                        <td>R$3.269,65</td>
-                        <td>R$3.269,65</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Tiago</td>
-                        <td>666</td>
-                        <td>10/04/2023 13:25</td>
-                        <td>R$156,79</td>
-                        <td>R$627,16</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Miguel</td>
-                        <td>482</td>
-                        <td>17/05/2023 08:33</td>
-                        <td>R$7.999,00</td>
-                        <td>R$7.999,00</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Larissa</td>
-                        <td>047</td>
-                        <td>24/05/2023 12:10</td>
-                        <td>R$49,90</td>
-                        <td>R$299,40</td>
-                    </tr>
-                </tbody>
-            </table>
+        
+        <div id="detalhes">
+
         </div>
+        
         <div class="vendas">
          <div class="menu">
             <div class="row">
                 <div class="col">
-                    <h4>ID</h4>
+                    <h4>ID do Cliente</h4>
                 </div>
                 <div class="col">
                     <h4>Código de Venda</h4>
@@ -100,87 +60,14 @@
                 </div>
                </div>
          </div>
-           <div class="row">
-            <div class="col">
-                <p>1</p>
-            </div>
-            <div class="col">
-                <p>007</p>
-            </div>
-            <div class="col">
-                <p>Iphone 11</p>
-            </div>
-            <div class="col">
-                <p>1</p>
-            </div>
-            <div class="col">
-                <p>R$3.269,65</p>
-            </div>
-            <div class="col">
-                <p>R$3.269,65</p>
-            </div>
-           </div>
-           <div class="row">
-            <div class="col">
-                <p>2</p>
-            </div>
-            <div class="col">
-                <p>666</p>
-            </div>
-            <div class="col">
-                <p>Whisky Jack Daniels</p>
-            </div>
-            <div class="col">
-                <p>4</p>
-            </div>
-            <div class="col">
-                <p>R$156,79</p>
-            </div>
-            <div class="col">
-                <p>R$627,16</p>
-            </div>
-           </div>
+         <section id="section">
+               
+         </section>
         </div>
-        <div class="row">
-            <div class="col">
-                <p>3</p>
-            </div>
-            <div class="col">
-                <p>482</p>
-            </div>
-            <div class="col">
-                <p>MacBook Pro</p>
-            </div>
-            <div class="col">
-                <p>1</p>
-            </div>
-            <div class="col">
-                <p>R$7.999,00</p>
-            </div>
-            <div class="col">
-                <p>R$7.999,00</p>
-            </div>
-           </div>
-           <div class="row">
-            <div class="col">
-                <p>4</p>
-            </div>
-            <div class="col">
-                <p>047</p>
-            </div>
-            <div class="col">
-                <p>Camisa T-Shirt</p>
-            </div>
-            <div class="col">
-                <p>6</p>
-            </div>
-            <div class="col">
-                <p>R$49,90</p>
-            </div>
-            <div class="col">
-                <p>R$299,40</p>
-            </div>
-           </div>
+    </div>
+
+        
+           
         </div> 
         </div>  
     </div><br>
