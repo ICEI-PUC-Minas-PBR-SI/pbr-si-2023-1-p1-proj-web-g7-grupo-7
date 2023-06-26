@@ -39,7 +39,7 @@ function incluirproduto (){
     let strEstoque = document.getElementById ('estoque').value;
     let strImg = document.getElementById ('img').value;
     let strDetalhes = document.getElementById ('detalhes').value;
-    let strID = document.getElementById ('id').textContent;
+    let strID = document.getElementById ('id').textContent;    
 
     let novoProduto = {
 
@@ -75,11 +75,15 @@ function imprimeDados () {
             strHtml += `<p>${objDados[i].produto[j].codigo} - ${objDados[i].produto[j].nome} - ${objDados[i].produto[j].categoria} - ${objDados[i].produto[j].marca}</p>
                         <p>${objDados[i].produto[j].preco} - ${objDados[i].produto[j].estoque}</p><br><img src="${objDados[i].produto[j].img}" alt="Imagem do produto" width="200" height="200">
                         <p>${objDados[i].produto[j].detalhes}</p><br><br>`
+                        
+                        
         }
     }
-
+    
     tela.innerHTML = strHtml;
 }
+
+
 
 // Configura os botões
 document.getElementById ('buscar').addEventListener ('click', imprimeDados);

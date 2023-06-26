@@ -1,0 +1,1 @@
+//js aplicado ao código html diretamente
