@@ -71,11 +71,14 @@
 
     <script>
 
+        //tentativa de passar parâmetros pela url
+
         function obterParametroConsulta(nome) {
             const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(nome);
+            return urlParams.get(codigo);
         }
         
+        //função para tentar trazer os dados dos produtos à partir da atualização da página
         function attPag() {
             let section = document.getElementById('section');
             let strHtml = '';
@@ -90,6 +93,8 @@
             let strID = localStorage.getItem('strID');
         
             console.log(strCodigo);
+
+            //recebe o código referente à section do HTML.
         
             section.innerHTML = `
                 <section class="detalhedoproduto">
