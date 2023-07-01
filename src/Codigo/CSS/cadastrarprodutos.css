@@ -85,3 +85,7 @@ button {
 button:hover {
   background-color:#dd5523;
 }
+
+#Usuario {
+  display: none;
+}
