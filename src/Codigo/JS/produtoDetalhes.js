@@ -63,11 +63,10 @@ function init() {
   // Preencher informações do carousel
   for (let i = 0; i < objDados.length; i++) {
     for (let j = 0; j < objDados[i].produto.length; j++) {
+      if (id == i && produtoIndex == j) {
+        const produto = objDados[id].produto[produtoIndex];
 
-        if (id == i && produtoIndex == j) {
-            const produto = objDados[id].produto[produtoIndex];
-            
-      strHtml += `
+        strHtml += `
         <section class="detalhedoproduto">
             <div class="dproduto">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -93,8 +92,8 @@ function init() {
         </section>
     `;
 
-      // Preencher informações da descrição do produto
-      strHtml += `
+        // Preencher informações da descrição do produto
+        strHtml += `
         <div class="descricaodoproduto">
             <p class="descricaodetalhe">${objDados[i].produto[j].nome}</p>
             <div class="valor">
@@ -120,22 +119,23 @@ function init() {
             </div>
         </div>
     `;
-    }
+      }
 
-    // Preencher informações da descrição detalhada
+      // Preencher informações da descrição detalhada
 
-    strHtml += `
+      const detalhes = objDados[id].produto[produtoIndex].detalhes;
+      strHtml += `
         <div class="descricao2">
             <div class="conteudo">
                 <h1>Descrição:</h1>
             </div>
-            <p class="explicacaoproduto">teste</p>
+            <p class="explicacaoproduto">${detalhes}</p>
         </div>
     `;
 
-    section.innerHTML = strHtml;
+      section.innerHTML = strHtml;
+    }
   }
-}
 }
 
 // Chamada da função init ao carregar a página

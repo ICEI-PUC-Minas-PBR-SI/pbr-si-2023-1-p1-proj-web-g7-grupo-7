@@ -123,12 +123,13 @@ function init() {
 
       // Preencher informações da descrição detalhada
 
+      const detalhes = objDados[id].produto[produtoIndex].detalhes;
       strHtml += `
         <div class="descricao2">
             <div class="conteudo">
                 <h1>Descrição:</h1>
             </div>
-            <p class="explicacaoproduto">teste</p>
+            <p class="explicacaoproduto">${detalhes}</p>
         </div>
     `;
 
