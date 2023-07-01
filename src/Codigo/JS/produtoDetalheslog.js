@@ -97,7 +97,7 @@ function init() {
         <div class="descricaodoproduto">
             <p class="descricaodetalhe">${objDados[i].produto[j].nome}</p>
             <div class="valor">
-                <p class="valordetalhe">${objDados[i].produto[j].preco}</p>
+                <p class="valordetalhe">R$ ${objDados[i].produto[j].preco}</p>
                 <p class="condicaodetalhe">À vista no PIX</p>
                 
                 <nav class="">

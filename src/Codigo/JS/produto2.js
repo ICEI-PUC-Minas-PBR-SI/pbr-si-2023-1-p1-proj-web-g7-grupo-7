@@ -13,7 +13,7 @@ function init() {
                          <a href="${produtoDetalhesURL}" class="detalhesProdutos">
                              <img src="${objDados[i].produto[j].img}">
                              <p class="descricao">${objDados[i].produto[j].nome}</p>
-                             <p class="valor">${objDados[i].produto[j].preco}</p>
+                             <p class="valor">R$ ${objDados[i].produto[j].preco}</p>
                              <p class="condicao">À vista</p>
                          </a>
                          <div class="produto-footer">
