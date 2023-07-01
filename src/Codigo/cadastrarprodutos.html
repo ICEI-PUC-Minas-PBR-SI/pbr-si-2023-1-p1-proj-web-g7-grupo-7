@@ -32,7 +32,7 @@
             window.addEventListener('load', initPage);
         </script>
     </head>
-    <body>
+    <body onload="imprimeDados()">
         <!--CABEÇALHO NAV BAR -->
         <header class="navbar sticky-top navbar-dark navBar static-top">
             <img class="logo" src="IMG/logo.png" alt="Logo">
@@ -52,7 +52,7 @@
         <!--CADASTRO DE PRODUTOS EM 2 COLUNAS-->
         <!--1ª COLUNA-->
 
-    <h1>Cadastro de Produtos</h1>
+    <h1 id="titulo">Cadastro de Produtos</h1>
     <div class="container">
               <div class="col">
                     <div class="form-group">
@@ -109,9 +109,41 @@
               </div>
         </div>
     </div>
+    <div class="row" id="lista">
+        <div class="col-12">
+            <table id="grid-contatos" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Código</th>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Preço</th>
+                        <th scope="col">Estoque</th>
+                        <th scope="col">Imagem</th>
+                        <th scope="col">Detalhes</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                    <tr>
+                        <td scope="row"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     <div id="tela">
         
     </div>
+</div>
 
 
 <!--Rodapé-->
