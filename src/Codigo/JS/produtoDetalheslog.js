@@ -1,31 +1,31 @@
 function lerDados() {
-    let strDados = localStorage.getItem('db');
-    let objDados = {};
-    if (strDados){
-      objDados = JSON.parse (strDados);
-    }
-    else{
-      objDados = { cadastro: [
-         {
+  let strDados = localStorage.getItem("db");
+  let objDados = {};
+  if (strDados) {
+    objDados = JSON.parse(strDados);
+  } else {
+    objDados = {
+      cadastro: [
+        {
           id: 0,
           produto: 1,
           nome: "",
-          preço: "3,20",
-          descricao: "teste",
-         },
-  
-          {
-            id: 0,
-            produto: 2,
-            nome: "",
-            preço: "3,50",
-            descricao: "teste",
-          }
-        ]
-      }
-    }
-    return(objDados);
+          preço: "",
+          descricao: "",
+        },
+
+        {
+          id: 0,
+          produto: 2,
+          nome: "",
+          preço: "",
+          descricao: "",
+        },
+      ],
+    };
   }
+  return objDados;
+}
 
 function carregarProduto() {
   // Tenta obter os parâmetros da URL
@@ -56,15 +56,22 @@ function init() {
   let strHtml = "";
   let objDados = leDados().cadastro;
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = parseInt(urlParams.get("id"));
+  const produtoIndex = parseInt(urlParams.get("produto"));
+
   // Preencher informações do carousel
   for (let i = 0; i < objDados.length; i++) {
     for (let j = 0; j < objDados[i].produto.length; j++) {
+      if (id == i && produtoIndex == j) {
+        const produto = objDados[id].produto[produtoIndex];
+
         strHtml += `
         <section class="detalhedoproduto">
             <div class="dproduto">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target ="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
@@ -112,12 +119,11 @@ function init() {
             </div>
         </div>
     `;
-      
-  }
+      }
 
-  // Preencher informações da descrição detalhada
-  
-  strHtml += `
+      // Preencher informações da descrição detalhada
+
+      strHtml += `
         <div class="descricao2">
             <div class="conteudo">
                 <h1>Descrição:</h1>
@@ -126,9 +132,9 @@ function init() {
         </div>
     `;
 
-  section.innerHTML = strHtml;
-}
-
+      section.innerHTML = strHtml;
+    }
+  }
 }
 
 // Chamada da função init ao carregar a página
