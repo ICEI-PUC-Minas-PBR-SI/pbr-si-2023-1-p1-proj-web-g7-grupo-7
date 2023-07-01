@@ -88,7 +88,7 @@ function incluirproduto (){
     salvaDados (objDados);
 
     // Atualiza os dados da tela
-    imprimeDados ();
+    //imprimeDados ();
 }
 
 function imprimeDados () {
@@ -101,19 +101,22 @@ function imprimeDados () {
         if (strID == objDados[i].id){
             strHtml += `<p>${objDados[i].id}</p>`
             for (let j = 0; j < objDados[i].produto.length; j++){
-                strHtml += `<p>${objDados[i].produto[j].codigo} - ${objDados[i].produto[j].nome} - ${objDados[i].produto[j].categoria} - ${objDados[i].produto[j].marca}</p>
-                            <p>${objDados[i].produto[j].preco} - ${objDados[i].produto[j].estoque}</p><br><img src="${objDados[i].produto[j].img}" alt="Imagem do produto" width="200" height="200">
-                            <p>${objDados[i].produto[j].detalhes}</p><br><br>`                        
+                $("#table").append(`<tr><td scope="row"></td>
+                                                <td>${objDados[i].produto[j].codigo}</td>
+                                                <td>${objDados[i].produto[j].nome}</td>
+                                                <td>${objDados[i].produto[j].categoria}</td>
+                                                <td>${objDados[i].produto[j].marca}</td>
+                                                <td>${objDados[i].produto[j].preco}</td>
+                                                <td>${objDados[i].produto[j].estoque}</td>
+                                                <td><img src="${objDados[i].produto[j].img}" alt="Imagem do produto" width="200" height="200"></td>
+                                                <td>${objDados[i].produto[j].detalhes}</td>
+                                            </tr>`);                        
             }
         }
     }
-    
-    tela.innerHTML = strHtml;
 }
 
-
-
 // Configura os botões
-document.getElementById ('buscar').addEventListener ('click', imprimeDados);
+//document.getElementById ('buscar').addEventListener ('click', imprimeDados);
 document.getElementById ('cadastrar').addEventListener ('click', incluirproduto);
 
