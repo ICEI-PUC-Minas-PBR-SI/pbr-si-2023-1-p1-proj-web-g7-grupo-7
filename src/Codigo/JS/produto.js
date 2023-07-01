@@ -79,7 +79,7 @@ function incluirproduto (){
                     img: strImg,
                     detalhes: strDetalhes
             };
-            objDados.cadastro[i].pro.push (novoProduto);
+            objDados.cadastro[i].produto.push (novoProduto);
             //objDados.cadastro.i.push (novoProduto);
         }
     }
