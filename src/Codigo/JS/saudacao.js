@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var horaAtual = new Date().getHours("");
   
     if (horaAtual >= 0 && horaAtual < 12) {
-      saudacao.textContent = "Bom dia, Seja bem vindo!";
+      saudacao.textContent = "Bom dia, seja bem-vindo(a)!";
     } else if (horaAtual >= 12 && horaAtual < 18) {
-      saudacao.textContent = "Boa tarde, Seja bem vindo!";
+      saudacao.textContent = "Boa tarde, seja bem-vindo(a)!";
     } else {
-      saudacao.textContent = "Boa noite, Seja bem vindo!";
+      saudacao.textContent = "Boa noite, seja bem-vindo(a)!";
     }
   });
 
