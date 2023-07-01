@@ -1,22 +1,31 @@
-function leDados() {
-  // Obtém os dados armazenados no localStorage
-  let strDados = localStorage.getItem("db");
-  let objDados = {};
-  // Verifica se os dados existem e faz o parse do JSON
-  if (strDados) {
-    objDados = JSON.parse(strDados);
-  } else {
-    // Retorna um objeto padronizado, caso não exista
-    return {
-      cadastro: [
-        {
-          produto: [{}, {}],
-        },
-      ],
-    };
+function lerDados() {
+    let strDados = localStorage.getItem('db');
+    let objDados = {};
+    if (strDados){
+      objDados = JSON.parse (strDados);
+    }
+    else{
+      objDados = { cadastro: [
+         {
+          id: 0,
+          produto: 1,
+          nome: "",
+          preço: "3,20",
+          descricao: "teste",
+         },
+  
+          {
+            id: 0,
+            produto: 2,
+            nome: "",
+            preço: "3,50",
+            descricao: "teste",
+          }
+        ]
+      }
+    }
+    return(objDados);
   }
-  return objDados;
-}
 
 function carregarProduto() {
   // Tenta obter os parâmetros da URL
@@ -46,10 +55,6 @@ function init() {
   let section = document.getElementById("section");
   let strHtml = "";
   let objDados = leDados().cadastro;
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const idCadastro = urlParams.get("id");
-  const indiceProduto = urlParams.get("produto");
 
   // Preencher informações do carousel
   for (let i = 0; i < objDados.length; i++) {
@@ -107,10 +112,11 @@ function init() {
             </div>
         </div>
     `;
-      }
+      
   }
 
   // Preencher informações da descrição detalhada
+  
   strHtml += `
         <div class="descricao2">
             <div class="conteudo">
@@ -121,6 +127,8 @@ function init() {
     `;
 
   section.innerHTML = strHtml;
+}
+
 }
 
 // Chamada da função init ao carregar a página
