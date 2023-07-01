@@ -29,6 +29,7 @@ function salvaDados (dados) {
 function incluirproduto (){
     // Ler os dados do localStorage
     let objDados = leDados();
+    let cadastro = objDados.cadastro;
 
     // Incluir um novo contato
     let strCodigo = document.getElementById ('codigo').value;
@@ -39,23 +40,49 @@ function incluirproduto (){
     let strEstoque = document.getElementById ('estoque').value;
     let strImg = document.getElementById ('img').value;
     let strDetalhes = document.getElementById ('detalhes').value;
-    let strID = document.getElementById ('id').textContent;    
+    let strID = document.getElementById ('Usuario').textContent;    
+    let novoProduto;
+    let novoId;
+    let cont = 0;
 
-    let novoProduto = {
+    // Cadastra usuario no banco de dados
+    for (let i = 0; i < cadastro.length; i++){
 
-        id: strID,
-        produto: [{
-            codigo: strCodigo,
-            nome: strProduto,
-            categoria: strCategoria,
-            marca: strMarca,
-            preco: strPreco,
-            estoque: strEstoque,
-            img: strImg,
-            detalhes: strDetalhes
-        }]
-    };
-    objDados.cadastro.push (novoProduto);
+        if (strID == cadastro[i].id){
+            cont++;
+        }
+    }
+
+    if (cont == 0){
+        novoId = {
+            id: strID,
+            produto: []
+        };
+        objDados.cadastro.push (novoId);
+        salvaDados (objDados);
+    }   
+
+
+    objDados = leDados();
+    let cadastro1 = objDados.cadastro;
+
+    for (let i = 0; i < cadastro1.length; i++){
+
+        if (strID == cadastro1[i].id){
+            novoProduto = {
+                    codigo: strCodigo,
+                    nome: strProduto,
+                    categoria: strCategoria,
+                    marca: strMarca,
+                    preco: strPreco,
+                    estoque: strEstoque,
+                    img: strImg,
+                    detalhes: strDetalhes
+            };
+            objDados.cadastro[i].produto.push (novoProduto);
+            //objDados.cadastro.i.push (novoProduto);
+        }
+    }
 
     // Salvar os dados no localStorage novamente
     salvaDados (objDados);
@@ -65,18 +92,19 @@ function incluirproduto (){
 }
 
 function imprimeDados () {
+    let strID = document.getElementById ('Usuario').textContent;
     let tela = document.getElementById('tela');
     let strHtml = '';
     let objDados = leDados ();
     objDados = objDados.cadastro;
     for (let i = 0; i < objDados.length; i++) {
-        strHtml += `<p>${objDados[i].id}</p>`
-        for (let j = 0; j < objDados[i].produto.length; j++){
-            strHtml += `<p>${objDados[i].produto[j].codigo} - ${objDados[i].produto[j].nome} - ${objDados[i].produto[j].categoria} - ${objDados[i].produto[j].marca}</p>
-                        <p>${objDados[i].produto[j].preco} - ${objDados[i].produto[j].estoque}</p><br><img src="${objDados[i].produto[j].img}" alt="Imagem do produto" width="200" height="200">
-                        <p>${objDados[i].produto[j].detalhes}</p><br><br>`
-                        
-                        
+        if (strID == objDados[i].id){
+            strHtml += `<p>${objDados[i].id}</p>`
+            for (let j = 0; j < objDados[i].produto.length; j++){
+                strHtml += `<p>${objDados[i].produto[j].codigo} - ${objDados[i].produto[j].nome} - ${objDados[i].produto[j].categoria} - ${objDados[i].produto[j].marca}</p>
+                            <p>${objDados[i].produto[j].preco} - ${objDados[i].produto[j].estoque}</p><br><img src="${objDados[i].produto[j].img}" alt="Imagem do produto" width="200" height="200">
+                            <p>${objDados[i].produto[j].detalhes}</p><br><br>`                        
+            }
         }
     }
     

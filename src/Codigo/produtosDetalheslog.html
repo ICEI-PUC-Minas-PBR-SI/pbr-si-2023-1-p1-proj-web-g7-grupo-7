@@ -37,40 +37,37 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap"
       rel="stylesheet"
     />
-    <title>MEX | Produtos</title>
+    <!--<script async src="produtoDetalhes.js"></script>-->
+    <title>MEX | Detalhes do produtos</title>
   </head>
 
   <body onload="init()">
-    <!--CABEÇALHO NAV BAR -->
+    <!--CABEÇALHO NAV BAR-->
     <header class="navbar sticky-top navbar-dark navBar static-top">
       <a href="index.html">
         <img class="logo" src="IMG/logo.png" alt="Logo" />
       </a>
 
       <div class="buttons">
+        <h2><a class="navbar-brand" href="index.html">Inicio</a></h2>
         <h2><a class="navbar-brand" href="login.html">Login</a></h2>
+        <h2><a class="navbar-brand" href="index.html">Sair</a></h2>
       </div>
     </header>
-    <div class="bg">
+    <div class="bg2">
       <div class="container">
         <div class="conteudo">
-          <h1>Catálogo</h1>
+          <h1>Detalhes</h1>
           <br /><br />
         </div>
 
-        <nav class="menuProdutos">
-          <select class="form-select mt-3">
-            <option>Classificar por</option>
-            <option>Mais vendidos</option>
-            <option>Estoque disponível</option>
-            <option>Mais avaliados</option>
-          </select>
-        </nav>
-        <section class="catalog" id="section"></section>
+        <!--Sessão dos detalhes dos produtos, onde será alimentado pelo JS-->
+
+        <section class="conjuntoprodutodescricao" id="section"></section>
       </div>
     </div>
     <!--Rodapé-->
-    <footer class="fixed-bottom fixed bg-danger">
+    <footer class="fixed-bottom bg-danger">
       <div class="container">
         <hr class="bg-hex" style="margin: 0 15%" />
         <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
@@ -89,7 +86,9 @@
         <!-- Copyright -->
       </div>
     </footer>
+
     <script src="JS/produto.js"></script>
     <script src="JS/produto2.js"></script>
+    <script src="JS/produtoDetalheslog.js"></script>
   </body>
 </html>

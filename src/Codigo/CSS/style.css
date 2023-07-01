@@ -54,3 +54,6 @@ footer {
         margin-top: 10px;
     }
 }
+#Usuario {
+    display: none;
+  }

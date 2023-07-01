@@ -11,6 +11,26 @@
     <link rel="stylesheet" href="CSS/stylelogin.css">
     <link rel="stylesheet" href="CSS/styleVendas.css">
     <title>MEX | Controle de Vendas</title>
+    <Script src="JS/login.js"></Script>
+    <script>
+        // Verifica se o usuário já esta logado e se negativo, redireciona para tela de login        
+        if (!usuarioCorrente.login) {
+            window.location.href = LOGIN_URL;
+        }
+    
+        function initPage() {
+
+            // Associa a função de logout ao botão
+            document.getElementById('btn_logout').addEventListener('click', logoutUser);
+
+            // Informa o nome do usuário logado
+            document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+            document.getElementById('Usuario').innerHTML = usuarioCorrente.login;
+        }
+
+        // Associa ao evento de carga da página a função para verificar se o usuário está logado
+        window.addEventListener('load', initPage);
+    </script>
 </head>
 <body onload="mostrarVendas()">
 
@@ -20,11 +40,11 @@
     <!--CABEÇALHO NAV BAR -->
     <header class="navbar sticky-top navbar-dark navBar static-top">
         <img class="logo" src="IMG/logo.png" alt="Logo">
-
+        <h1>Olá <span id="nomeUsuario">, seja bem-vindo!</span></h1>
+        <p id="Usuario"></p>
         <div class="buttons">
-            <h2><a class="navbar-brand" href="inicio.html"></a></h2>
-            <h2><a class="navbar-brand" href="i#"></a></h2>
-            <h2><a class="navbar-brand" href="inicio.html">Sair</a></h2>
+            <h2><a class="navbar-brand" href="inicio.html">Voltar</a></h2>
+            <h2><a class="navbar-brand" id="btn_logout" href="index.html">Sair</a></h2>
         </div>
     </header>
     
@@ -72,7 +92,7 @@
         </div>  
     </div><br>
     <!--Rodapé-->
-    <footer class="page-footer fixed bg-danger">
+    <footer class="fixed-bottom fixed bg-danger">
         <div class="container">
             <hr class="bg-hex" style="margin: 0 15%;">
             <div class="row d-flex text-center justify-content-center  mb-md-0 mb-4 ">

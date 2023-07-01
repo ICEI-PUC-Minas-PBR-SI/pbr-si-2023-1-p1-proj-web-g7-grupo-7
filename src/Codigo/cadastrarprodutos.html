@@ -11,6 +11,26 @@
         <link rel="stylesheet" href="/src/Codigo/CSS/style.css">
         <link rel="stylesheet" href="/src/Codigo/CSS/cadastrarprodutos.css">
         <title>MEX</title>
+        <Script src="JS/login.js"></Script>
+        <script>
+            // Verifica se o usuário já esta logado e se negativo, redireciona para tela de login        
+            if (!usuarioCorrente.login) {
+                window.location.href = LOGIN_URL;
+            }
+        
+            function initPage() {
+    
+                // Associa a função de logout ao botão
+                document.getElementById('btn_logout').addEventListener('click', logoutUser);
+    
+                // Informa o nome do usuário logado
+                document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+                document.getElementById('Usuario').innerHTML = usuarioCorrente.login;
+            }
+    
+            // Associa ao evento de carga da página a função para verificar se o usuário está logado
+            window.addEventListener('load', initPage);
+        </script>
     </head>
     <body>
         <!--CABEÇALHO NAV BAR -->
@@ -19,14 +39,13 @@
             <h1 class="title">Multi Express</h1>
             <div class="search">
                 <input type="text" id="pesquisa" name="pesquisa" placeholder="Pesquisar">
-                <button id="lupa"><img src="IMG/lupa.png" alt="Lupa"></button>
             </div>
-            <p class="user">Usuário</p>
-            <p id="id">003</p>
+            <h1>Olá <span id="nomeUsuario">, seja bem-vindo!</span></h1>
+            <p id="Usuario"></p>
             <div class="buttons">
-                <h2><a class="navbar-brand" href="/src/Codigo/inicio.html">Inicio</a></h2>
-                <h2><a class="navbar-brand" href="/src/Codigo/cadastrarprodutos.html">Cadastrar</a></h2>
-                <h2><a class="navbar-brand" href="/src/Codigo/index.html">Sair</a></h2>
+                <h2><a class="navbar-brand" href="/src/Codigo/indexlog.html">Inicio</a></h2>
+                <h2><a class="navbar-brand" href="/src/Codigo/inicio.html">Menu</a></h2>
+                <h2><a class="navbar-brand" id="btn_logout" href="/src/Codigo/index.html">Sair</a></h2>
             </div>
         </header>
 
@@ -96,7 +115,7 @@
 
 
 <!--Rodapé-->
-    <footer class="page-footer fixed bg-danger">
+    <footer class="fixed-bottom fixed bg-danger">
         <div class="container-footer">
             <hr class="bg-hex" style="margin: 0 15%;">
             <div class="row d-flex text-center justify-content-center  mb-md-0 mb-4 ">
@@ -112,6 +131,7 @@
         </div>
     </footer>
     <Script src="JS/produto.js"></Script>
+
 
 </body>
 </html>

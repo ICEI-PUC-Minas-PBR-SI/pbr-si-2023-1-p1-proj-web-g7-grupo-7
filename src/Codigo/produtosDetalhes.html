@@ -1,227 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/styleProdutos.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="CSS/styleProdutos.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap"
+      rel="stylesheet"
+    />
     <!--<script async src="produtoDetalhes.js"></script>-->
     <title>MEX | Detalhes do produtos</title>
-</head>
+  </head>
 
-<body onload="attPag()">
+  <body onload="init()">
     <!--CABEÇALHO NAV BAR-->
     <header class="navbar sticky-top navbar-dark navBar static-top">
-        <a href="inicio.html">
-            <img class="logo" src="IMG/logo.png" alt="Logo">
-        </a>
+      <a href="index.html">
+        <img class="logo" src="IMG/logo.png" alt="Logo" />
+      </a>
 
-        <div class="buttons">
-            <h2><a class="navbar-brand" href="inicio.html">Inicio</a></h2>
-            <h2><a class="navbar-brand" href="produtos.html">Produtos</a></h2>
-            <h2><a class="navbar-brand" href="index.html">Sair</a></h2>
-        </div>
+      <div class="buttons">
+        <h2><a class="navbar-brand" href="index.html">Inicio</a></h2>
+        <h2><a class="navbar-brand" href="login.html">Login</a></h2>
+        <h2><a class="navbar-brand" href="index.html">Sair</a></h2>
+      </div>
     </header>
     <div class="bg2">
-        <div class="container">
-            <div class="conteudo">
-                <h1> Detalhes </h1><br><br>
-            </div>
-
-            <section class="conjuntoprodutodescricao" id="section">
-                
-            </section>
+      <div class="container">
+        <div class="conteudo">
+          <h1>Detalhes</h1>
+          <br /><br />
         </div>
 
+        <!--Sessão dos detalhes dos produtos, onde será alimentado pelo JS-->
+
+        <section class="conjuntoprodutodescricao" id="section"></section>
+      </div>
     </div>
     <!--Rodapé-->
-    <footer class="page-footer fixed bg-danger">
-        <div class="container">
-            <hr class="bg-hex" style="margin: 0 15%;">
-            <div class="row d-flex text-center justify-content-center  mb-md-0 mb-4 ">
-                <div class="col-md-8 col-12 mt-5">
-                    <p style="line-height: 1.7rem; color: white;">Multi Express <br>Contato: mex@gmail.com.br</p>
-                </div>
-            </div>
-            <hr class="clearfix d-md-none bg-white " style="margin: 10% 15% 5%;">
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3" style="color: white;">© 2019 Copyright: Bootstrap<br>
-            </div>
-            <br>
-            <!-- Copyright -->
+    <footer class="fixed-bottom fixed bg-danger">
+      <div class="container">
+        <hr class="bg-hex" style="margin: 0 15%" />
+        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+          <div class="col-md-8 col-12 mt-5">
+            <p style="line-height: 1.7rem; color: white">
+              Multi Express <br />Contato: mex@gmail.com.br
+            </p>
+          </div>
         </div>
+        <hr class="clearfix d-md-none bg-white" style="margin: 10% 15% 5%" />
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="color: white">
+          © 2019 Copyright: Bootstrap<br />
+        </div>
+        <br />
+        <!-- Copyright -->
+      </div>
     </footer>
 
-    <script>
-
-        //tentativa de passar parâmetros pela url
-
-        function obterParametroConsulta(nome) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(codigo);
-        }
-        
-        //função para tentar trazer os dados dos produtos à partir da atualização da página
-        function attPag() {
-            let section = document.getElementById('section');
-            let strHtml = '';
-            let strCodigo = localStorage.getItem("strCodigo");
-            let strProduto = localStorage.getItem('strProduto');
-            let strCategoria = localStorage.getItem('strCategoria');
-            let strMarca = localStorage.getItem('strMarca');
-            let strPreco = localStorage.getItem('strPreco');
-            let strEstoque = localStorage.getItem('strEstoque');
-            let strImg = localStorage.getItem('strImg');
-            let strDetalhes = localStorage.getItem('strDetalhes');
-            let strID = localStorage.getItem('strID');
-        
-            console.log(strCodigo);
-
-            //recebe o código referente à section do HTML.
-        
-            section.innerHTML = `
-                <section class="detalhedoproduto">
-                    <div class="dproduto">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="${strImg}" alt="Primeiro slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="${strImg}" alt="Segundo slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="${strImg}" alt="Terceiro slide">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-        
-                <div class="descricaodoproduto">
-                    <p class="descricaodetalhe">${strProduto}</p>
-                    <div class="valor">
-                        <p class="valordetalhe">${strPreco}</p>
-                        <p class="condicaodetalhe">À vista no PIX</p>
-                        
-                        <nav class="">
-                            <select id="quantidade" class="quantidade">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                            </select>
-                        </nav>
-                    </div>
-                    <div class="comprarDescricao">
-                        <a id="botaoComprar" href="carrinho.html" class="botaoProduto">Comprar</a>
-                    </div>
-                </div>
-        
-                <div class="descricao2">
-                    <div class="conteudo">
-                        <h1>Descrição:</h1>
-                    </div>
-                    <p class="explicacaoproduto">${strDetalhes}.</p>
-                </div>
-        
-                <div class="dproduto2">
-                    <div class="conteudo">
-                        <h1>Mais Produtos:</h1>
-                    </div>
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="card">
-                                    <img src="https://source.unsplash.com/random/620x480/?" alt="Primeiro Slide">
-                                    <p>O Headset Gamer HyperX CloudX foi testado e aprovado pela Microsoft e apresenta o conforto com a assinatura HyperX, durabilidade e som claro e nítido para gamers de Xbox.</p>
-                                    <p class="valordetalhe">R$600,00</p>
-                                    <p class="condicaodetalhe">À vista no PIX</p>
-                                    <div class="comprarDescricao">
-                                        <a href="#" class="botaoProduto">Comprar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card">
-                                    <img class="d-block w-100" src="https://source.unsplash.com/random/620x480/?" alt="Segundo Slide">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur molestiae quisquam delectus et facilis dolorum, alias, atque in hic placeat consectetur coluptate? Illum, animi!</p>
-                                    <p class="valordetalhe">R$500,00</p>
-                                    <p class="condicaodetalhe">À vista no PIX</p>
-                                    <div class="comprarDescricao">
-                                        <a href="#" class="botaoProduto">Comprar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card">
-                                    <img class="d-block w-100" src="https://source.unsplash.com/random/620x480/?" alt="Terceiro Slide">
-                                    <p>consectetur adipisicing elit. Aspernatur molestiae quisquam delectus et facilis dolorum</p>
-                                    <p class="valordetalhe">R$400,00</p>
-                                    <p class="condicaodetalhe">À vista no PIX</p>
-                                    <div class="comprarDescricao">
-                                        <a href="#" class="botaoProduto">Comprar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Anterior</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Próximo</span>
-                        </a><br>
-                    </div>
-                </div><br>
-            `;
-        }
-        
-        const codigoProduto = obterParametroConsulta('codigo');
-    
-        attPag();
-
-    </script>
-
-    <script src="produto2.js"></script>
-</body>
-
+    <script src="JS/produto.js"></script>
+    <script src="JS/produto2.js"></script>
+    <script src="JS/produtoDetalhes.js"></script>
+  </body>
 </html>
