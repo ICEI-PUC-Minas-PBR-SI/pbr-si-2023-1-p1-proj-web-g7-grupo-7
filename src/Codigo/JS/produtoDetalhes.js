@@ -131,7 +131,6 @@ function init() {
             </div>
             <p class="explicacaoproduto">${detalhes}</p>
             <p id="fornecedor" class="valordetalhe">Fornecedor: ${objDados[id].id}</p>
-            <p id="codigo" class="valordetalhe">ID: ${objDados[id].produto[j].codigo}</p>
         </div>
     `;
 
