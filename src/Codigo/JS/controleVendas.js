@@ -16,7 +16,7 @@ function mostrarVendas () {
 
       let quantidade = numeroAleatorio(1, 15);
 
-      str +=  `<div class="row" onclick="mostrarDetalhes()">
+      str +=  `<div class="row">
     <div class="col">
         <p>${dados[i].id}</p>
     </div>
@@ -34,6 +34,9 @@ function mostrarVendas () {
     </div>
     <div class="col">
         <p>${(parseFloat(dados[i].produto[j].preco)) * quantidade}</p>
+    </div>
+    <div class="col">
+        <button id="btnRVendas"onclick="mostrarDetalhes()">Detalhes</button>
     </div>
    </div>`;
 

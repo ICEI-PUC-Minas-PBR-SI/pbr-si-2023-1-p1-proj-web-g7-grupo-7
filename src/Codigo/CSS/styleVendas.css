@@ -33,3 +33,10 @@
 .dados tbody{
     background-color: lightgray;
 }
+
+#btnRVendas{
+    background-color: #ff6026;
+    color: black;
+    padding: 10px;
+    border-radius: 25px;
+}
