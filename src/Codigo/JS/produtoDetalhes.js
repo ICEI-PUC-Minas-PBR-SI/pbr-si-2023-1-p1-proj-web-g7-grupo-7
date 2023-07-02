@@ -115,7 +115,7 @@ function init() {
                 </nav>
             </div>
             <div class="comprarDescricao">
-                <a id="botaoComprar" href="carrinho.html" class="botaoProduto">Comprar</a>
+                <button id="botaoComprar"><a  class="botaoProduto">Comprar</a></button>
             </div>
         </div>
     `;
@@ -210,11 +210,11 @@ function incluircarrinho() {
           if (strProduto == carrinho[i].nome) {
             carrinho[i].qtd = parseInt(carrinho[i].qtd) + parseInt(strEstoque);
           }
+          objDados.carrinho.push(carrinho[i]);
         }
 
       // Salvar os dados no localStorage novamente
       salvacarrinho(objDados);
-
   }
 }
 
