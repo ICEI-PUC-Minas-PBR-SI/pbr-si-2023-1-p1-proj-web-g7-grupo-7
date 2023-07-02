@@ -130,6 +130,7 @@ function init() {
                 <h1>Descrição:</h1>
             </div>
             <p class="explicacaoproduto">${detalhes}</p>
+            <p class="valordetalhe">Fornecedor: ${objDados[id].id}</p>
         </div>
     `;
 
