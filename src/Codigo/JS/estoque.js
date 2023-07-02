@@ -1,3 +1,4 @@
+//lê os dados armazenados no LocalStorage
 function leDados() {
   let strDados = localStorage.getItem('db');
   let objDados = {};
@@ -12,7 +13,7 @@ function leDados() {
 
   return objDados;
 }
-
+  // Obtém os valores dos campos de busca do formulário
 function buscarProdutos() {
   let codigoBusca = document.getElementById('codigoBusca').value;
   let produtoBusca = document.getElementById('produtoBusca').value;
@@ -21,17 +22,20 @@ function buscarProdutos() {
   let precoBusca = document.getElementById('precoBusca').value;
   let estoqueBusca = document.getElementById('estoqueBusca').value;
 
+   // Obtém os dados armazenados
   let objDados = leDados();
   let cadastro = objDados.cadastro;
 
+  // Array para armazenar os produtos filtrados
   let filteredProdutos = [];
 
+  // Loop para percorrer os itens de cadastro
   for (let i = 0; i < cadastro.length; i++) {
       let produtos = cadastro[i].produto;
-
+      // Loop para percorrer os produtos de cada item
       for (let j = 0; j < produtos.length; j++) {
           let produto = produtos[j];
-
+          // Verifica se o produto atende aos critérios de busca
           if (
               (!codigoBusca || produto.codigo.includes(codigoBusca)) &&
               (!produtoBusca || produto.nome.toLowerCase().includes(produtoBusca.toLowerCase())) &&
@@ -40,23 +44,25 @@ function buscarProdutos() {
               (!precoBusca || produto.preco.includes(precoBusca)) &&
               (!estoqueBusca || produto.estoque.includes(estoqueBusca))
           ) {
+              // Adiciona o produto filtrado ao array
               filteredProdutos.push(produto);
           }
       }
   }
-
+   // Retorna o array com os produtos filtrados 
   return filteredProdutos;
 }
-
+// Obtém a referência ao elemento <tbody> da tabela
 function imprimirProdutos(produtos) {
   let tableBody = document.getElementById('estoqueBody');
+   // Limpa o conteúdo existente da tabela
   tableBody.innerHTML = '';
-
+  // Loop para percorrer os produtos e criar as linhas na tabela
   for (let i = 0; i < produtos.length; i++) {
       let produto = produtos[i];
-
+      // Cria uma nova linha <tr> na tabela
       let row = document.createElement('tr');
-
+      // Cria células <td> para cada propriedade do produto e atribui o conteúdo de texto
       let codigoCell = document.createElement('td');
       codigoCell.textContent = produto.codigo;
       row.appendChild(codigoCell);
@@ -80,7 +86,7 @@ function imprimirProdutos(produtos) {
       let estoqueCell = document.createElement('td');
       estoqueCell.textContent = produto.estoque;
       row.appendChild(estoqueCell);
-
+      // Adiciona a linha à tabela
       tableBody.appendChild(row);
   }
 }
