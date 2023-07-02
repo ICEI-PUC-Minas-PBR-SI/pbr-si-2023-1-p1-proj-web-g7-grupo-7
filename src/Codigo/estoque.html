@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/src/Codigo/CSS/style.css">
-        <link rel="stylesheet" href="/src/Codigo/CSS/cadastrarprodutos.css">
-        <title>MEX</title>
-        <Script src="JS/login.js"></Script>
-        <script>
-            // Verifica se o usuário já esta logado e se negativo, redireciona para tela de login        
-            if (!usuarioCorrente.login) {
-                window.location.href = LOGIN_URL;
-            }
-        
-            function initPage() {
-    
-                // Associa a função de logout ao botão
-                document.getElementById('btn_logout').addEventListener('click', logoutUser);
-    
-                // Informa o nome do usuário logado
-                document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
-                document.getElementById('Usuario').innerHTML = usuarioCorrente.login;
-            }
-    
-            // Associa ao evento de carga da página a função para verificar se o usuário está logado
-            window.addEventListener('load', initPage);
-        </script>
-    </head>
-    <body onload="imprimeDados()">
-        <!--CABEÇALHO NAV BAR -->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/src/Codigo/CSS/style.css">
+    <link rel="stylesheet" href="/src/Codigo/CSS/estoque.css">
+    <title>MEX</title>
+    <script src="JS/login.js"></script>
+    <script src="JS/estoque.js"></script>
+    <script>
+        // Verifica se o usuário já está logado e, se não estiver, redireciona para a tela de login        
+        if (!usuarioCorrente.login) {
+            window.location.href = LOGIN_URL;
+        }
+
+        function initPage() {
+
+            // Associa a função de logout ao botão
+            document.getElementById('btn_logout').addEventListener('click', logoutUser);
+
+            // Informa o nome do usuário logado
+            document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+            document.getElementById('Usuario').innerHTML = usuarioCorrente.login;
+
+            // Executa a busca inicial ao carregar a página
+            buscar();
+        }
+
+        // Associa ao evento de carga da página a função para verificar se o usuário está logado
+        window.addEventListener('load', initPage);
+    </script>
+</head>
+<body>
+    <!-- CABEÇALHO NAV BAR -->
     <header class="navbar sticky-top navbar-dark navBar static-top">
         <img class="logo" src="IMG/logo.png" alt="Logo">
         <h1>Olá <span id="nomeUsuario">, seja bem-vindo!</span></h1>
@@ -42,12 +43,11 @@
             <h2><a class="navbar-brand" href="/src/Codigo/inicio.html">Voltar</a></h2>
             <h2><a class="navbar-brand" id="btn_logout" href="/src/Codigo/index.html">Sair</a></h2>
         </div>
-    </header>    
+    </header>
 
-    <!--INPUT PARA BUSCAR O PRODUTO NO ESTOQUE-->
+    <!-- INPUT PARA BUSCAR O PRODUTO NO ESTOQUE -->
     <h1>Controle de Estoque</h1>
     <div class="container">
-        
         <div class="form-row">
             <div class="form-group col-md-2">
                 <label for="codigoBusca">Código:</label>
@@ -66,28 +66,24 @@
                 <input type="text" class="form-control" id="marcaBusca">
             </div>
             <div class="form-group col-md-2">
-                <label for="precoBusca">Preço de Venda:</label>
+                <label for="precoBusca">Preço:</label>
                 <input type="text" class="form-control" id="precoBusca">
             </div>
             <div class="form-group col-md-2">
                 <label for="estoqueBusca">Estoque:</label>
                 <input type="text" class="form-control" id="estoqueBusca">
-             </div>
-             <button id="buscar" class="btn-group-vertical">Buscar</button>
             </div>
         </div>
-        
+        <div class="form-group">
+            <button type="button" class="btn btn-warning" id="buscar">Buscar</button>
+        </div>
+    </div>
 
-    <!--BOTÃO INFORMATIVO DE PRODUTO EM ESTOQUE-->
-
-    <!-- ESTOQUE DE PRODUTOS EM UMA TABELA -->
-  
-<div class="row" id="lista">
-    <div class="col-12">
-        <table class="table">
-            <thead>
+    <!-- TABELA PARA EXIBIR OS PRODUTOS -->
+    <div class="container">
+        <table class="table table-striped">
+            <thead class="thead-light">
                 <tr>
-                    <th scope="col"></th>
                     <th scope="col">Código</th>
                     <th scope="col">Produto</th>
                     <th scope="col">Categoria</th>
@@ -97,25 +93,17 @@
                 </tr>
             </thead>
             <tbody id="estoqueBody">
-                <tr>
-                    <td scope="row"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <!-- Os dados serão preenchidos dinamicamente aqui -->
+                <!-- Dados do estoque serão adicionados aqui -->
             </tbody>
         </table>
     </div>
+</body>
+</html>
 </div>
-
     
     <!--Rodapé-->
     <footer class="page-bottom fixed bg-danger">
-        <div class="container-footer">
+        <div class="container">
             <hr class="bg-hex" style="margin: 0 15%;">
             <div class="row d-flex text-center justify-content-center  mb-md-0 mb-4 ">
                 <div class="col-md-8 col-12 mt-5">
@@ -124,16 +112,14 @@
             </div>
             <hr class="clearfix d-md-none bg-white " style="margin: 10% 15% 5%;">
             <!-- Copyright -->
-            <div class="footer-copyright text-center py-3" style="color: white;">©
-                2019
-                Copyright:
-                Bootstrap<br>
+            <div class="footer-copyright text-center py-3" style="color: white;">© 2019 Copyright: Bootstrap<br>
             </div>
             <br>
+            <!-- Copyright -->
         </div>
     </footer>
-    <Script src="JS/produto.js"></Script>
     <script src="JS/estoque.js"></script>
+    
 
 </body>
 

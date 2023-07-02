@@ -1,47 +1,97 @@
+function leDados() {
+  let strDados = localStorage.getItem('db');
+  let objDados = {};
 
-// Função para buscar os dados da página cadastrarprodutos.html
-function buscarDados() {
-  // Buscando os input da página cadastrarprodutos.html
-  var codigo = document.getElementById('codigo').value;
-  var produto = document.getElementById('produto').value;
-  var categoria = document.getElementById('categoria').value;
-  var marca = document.getElementById('marca').value;
-  var preco = document.getElementById('preco').value;
-  var estoque = document.getElementById('estoque').value;
+  if (strDados) {
+      objDados = JSON.parse(strDados);
+  } else {
+      objDados = {
+          cadastro: []
+      };
+  }
 
-  // Exibir os dados no console 
-  console.log('Código:', codigo);
-  console.log('Produto:', produto);
-  console.log('Categoria:', categoria);
-  console.log('Marca:', marca);
-  console.log('Preço de Venda:', preco);
-  console.log('Estoque:', estoque);
+  return objDados;
 }
 
-// Associar a função buscarDados ao botão "Buscar"
-var buscarButton = document.getElementById('buscar');
-buscarButton.addEventListener('click', buscarDados);
+function buscarProdutos() {
+  let codigoBusca = document.getElementById('codigoBusca').value;
+  let produtoBusca = document.getElementById('produtoBusca').value;
+  let categoriaBusca = document.getElementById('categoriaBusca').value;
+  let marcaBusca = document.getElementById('marcaBusca').value;
+  let precoBusca = document.getElementById('precoBusca').value;
+  let estoqueBusca = document.getElementById('estoqueBusca').value;
 
-function imprimeDados() {
-  $("#estoqueBody").html("");
-  let strID = document.getElementById('Usuario').textContent;
-  //let tela = document.getElementById('tela');
-  let strHtml = '';
   let objDados = leDados();
-  objDados = objDados.cadastro;
-  for (let i = 0; i < objDados.length; i++) {
-      if (strID == objDados[i].id) {
-          strHtml += `<p>${objDados[i].id}</p>`
-          for (let j = 0; j < objDados[i].produto.length; j++) {
-              $("#estoqueBody").append(`<tr><td scope="row"></td>
-                                              <td>${objDados[i].produto[j].codigo}</td>
-                                              <td>${objDados[i].produto[j].nome}</td>
-                                              <td>${objDados[i].produto[j].categoria}</td>
-                                              <td>${objDados[i].produto[j].marca}</td>
-                                              <td>${objDados[i].produto[j].preco}</td>
-                                              <td>${objDados[i].produto[j].estoque}</td>
-                                          </tr>`);
+  let cadastro = objDados.cadastro;
+
+  let filteredProdutos = [];
+
+  for (let i = 0; i < cadastro.length; i++) {
+      let produtos = cadastro[i].produto;
+
+      for (let j = 0; j < produtos.length; j++) {
+          let produto = produtos[j];
+
+          if (
+              (!codigoBusca || produto.codigo.includes(codigoBusca)) &&
+              (!produtoBusca || produto.nome.toLowerCase().includes(produtoBusca.toLowerCase())) &&
+              (!categoriaBusca || produto.categoria.toLowerCase().includes(categoriaBusca.toLowerCase())) &&
+              (!marcaBusca || produto.marca.toLowerCase().includes(marcaBusca.toLowerCase())) &&
+              (!precoBusca || produto.preco.includes(precoBusca)) &&
+              (!estoqueBusca || produto.estoque.includes(estoqueBusca))
+          ) {
+              filteredProdutos.push(produto);
           }
       }
   }
+
+  return filteredProdutos;
 }
+
+function imprimirProdutos(produtos) {
+  let tableBody = document.getElementById('estoqueBody');
+  tableBody.innerHTML = '';
+
+  for (let i = 0; i < produtos.length; i++) {
+      let produto = produtos[i];
+
+      let row = document.createElement('tr');
+
+      let codigoCell = document.createElement('td');
+      codigoCell.textContent = produto.codigo;
+      row.appendChild(codigoCell);
+
+      let nomeCell = document.createElement('td');
+      nomeCell.textContent = produto.nome;
+      row.appendChild(nomeCell);
+
+      let categoriaCell = document.createElement('td');
+      categoriaCell.textContent = produto.categoria;
+      row.appendChild(categoriaCell);
+
+      let marcaCell = document.createElement('td');
+      marcaCell.textContent = produto.marca;
+      row.appendChild(marcaCell);
+
+      let precoCell = document.createElement('td');
+      precoCell.textContent = produto.preco;
+      row.appendChild(precoCell);
+
+      let estoqueCell = document.createElement('td');
+      estoqueCell.textContent = produto.estoque;
+      row.appendChild(estoqueCell);
+
+      tableBody.appendChild(row);
+  }
+}
+
+function buscar() {
+  let produtos = buscarProdutos();
+  imprimirProdutos(produtos);
+}
+
+// Associa a função de busca ao botão
+document.getElementById('buscar').addEventListener('click', buscar);
+
+// Executa a busca inicial ao carregar a página
+buscar();
