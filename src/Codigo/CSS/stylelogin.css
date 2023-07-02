@@ -23,6 +23,14 @@ header {
 .logo {
     width: 100px;
 }
+.topo{
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    
+
+}
 
 /* Estilo para os botões */
 .buttons {
@@ -54,6 +62,56 @@ footer {
     
 }
 
+.btn {
+    width: 200px;
+    background-color: #f09731;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.input-field {
+    max-width: 380px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 55px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+}
+.modal_login{
+  margin: 0;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 25px;
+}
+.form-modal{
+ align-items: center;
+  margin: 10px;
+  display: inline-block;
+  padding: 10px;
+}
+.modal-footer{
+   align-items: center;
+  margin: 5px;
+  display: inline-block;
+  padding: 10px ;
+
+}
+.btn:hover {
+    background-color: #ff6026;
+}
 /*Configurações cards menu iniciar*/
 .selecao .card{
     width: 1120px;
