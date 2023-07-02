@@ -17,11 +17,10 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/styleConcluir.css">
-
     <!--Arquivo JS - Jean Carlo -->
     <script async src="JS/carrinho.js"> </script>
-
     <title>MEX</title>
+    <Script src="JS/produtoDetalhes.js"></Script>
     <Script src="JS/login.js"></Script>
     <script>
         // Verifica se o usuário já esta logado e se negativo, redireciona para tela de login        
@@ -44,11 +43,11 @@
     </script>
 </head>
 
-<body>
+<body onload="imprimecarrinho()">
     <!--CABEÇALHO NAV BAR -->
     <header class="navbar sticky-top navbar-dark navBar static-top">
         <img class="logo" src="IMG/logo.png" alt="Logo">
-
+        <p id="Usuario"></p>
         <div class="buttons">
             <h2><a class="navbar-brand" href="/src/Codigo/indexlog.html">Inicio</a></h2>
             <h2><a class="navbar-brand" href="/src/Codigo/inicio.html">Menu</a></h2>
@@ -62,18 +61,28 @@
         <hr>
         <div class="Jean_Content">
             <section class="Jean_Section">
-                <table class="Jean_Table">
+                <div class="row" id="lista">
+                <div class="col-12">
+                <table class="Jean_Table" class="table table-striped">
                     <thead>
                         <tr>
+                            <th scope="col"></th>
+                            <th></th>
                             <th>Produto</th>
                             <th>Preço</th>
                             <th>Quantidade</th>
                             <th>Total</th>
-                            <th> </th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="J_ProdutoCarrinho">
+                    <tbody id="tablecarrinho">
+                        <td scope="row"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                        <!--<tr class="J_ProdutoCarrinho">
                             <th>
 
                                 <div class="Jean_Produto">
@@ -127,10 +136,13 @@
                             <th><button class="J_RemoveButton">
                                     X
                                 </button></th>
-                        </tr>
+                        </tr>-->
 
                     </tbody>
                 </table>
+            </div>
+        </div>
+
             </section>
             <aside class="Jean_telaLateral">
                 <div class="Jean_Janela">
