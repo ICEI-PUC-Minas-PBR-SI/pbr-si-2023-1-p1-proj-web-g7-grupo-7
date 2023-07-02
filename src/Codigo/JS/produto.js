@@ -32,7 +32,7 @@ function incluirproduto (){
     let cadastro = objDados.cadastro;
 
     // Incluir um novo contato
-    let strCodigo = document.getElementById ('codigo').value;
+    let strCodigo = 1;
     let strProduto = document.getElementById ('produto').value;
     let strCategoria = document.getElementById ('categoria').value;
     let strMarca = document.getElementById ('marca').value;
@@ -45,7 +45,7 @@ function incluirproduto (){
     let novoId;
     let cont = 0;
 
-    // Cadastra usuario no banco de dados
+     // Cadastra usuario no banco de dados
     for (let i = 0; i < cadastro.length; i++){
 
         if (strID == cadastro[i].id){
@@ -69,6 +69,8 @@ function incluirproduto (){
     for (let i = 0; i < cadastro1.length; i++){
 
         if (strID == cadastro1[i].id){
+            if (cadastro1[i].length != 0) 
+            strCodigo = cadastro1[i].produto.length + 1;
             novoProduto = {
                     codigo: strCodigo,
                     nome: strProduto,
@@ -93,7 +95,7 @@ function incluirproduto (){
 
 function imprimeDados () {
     let strID = document.getElementById ('Usuario').textContent;
-    let tela = document.getElementById('tela');
+    //let tela = document.getElementById('tela');
     let strHtml = '';
     let objDados = leDados ();
     objDados = objDados.cadastro;
@@ -120,3 +122,38 @@ function imprimeDados () {
 //document.getElementById ('buscar').addEventListener ('click', imprimeDados);
 document.getElementById ('cadastrar').addEventListener ('click', incluirproduto);
 
+function updateContato(id, produto) {
+    // Localiza o indice do objeto a ser alterado no array a partir do seu ID
+    //let index = db.data.map(obj => obj.id).indexOf(id);
+    let strID = document.getElementById ('Usuario').textContent;
+    let objDados = leDados();
+    let cadastro = objDados.cadastro;
+
+    // Altera os dados do objeto no array
+    /*db.data[index].nome = produto.nome,
+    db.data[index].email = produto.email,
+    db.data[index].telefone = produto.telefone,
+    db.data[index].cidade = produto.cidade,
+    db.data[index].categoria = produto.categoria,
+    db.data[index].website = produto.website*/
+    for(let i = 0; i < cadastro.length; i++){
+        if (strID == cadastro[i].id){
+            for(let j = 0; j < cadastro[i].produto.length; j++){
+                if (id == cadastro[i].produto[j].codigo){
+                    cadastro[i].produto[j].nome = produto.nome,
+                    cadastro[i].produto[j].categoria = produto.categoria,
+                    cadastro[i].produto[j].marca = produto.marca,
+                    cadastro[i].produto[j].preco = produto.preco,
+                    cadastro[i].produto[j].estoque = produto.estoque,
+                    //cadastro[i].produto[j].img = produto.img,
+                    cadastro[i].produto[j].detalhes = produto.detalhes
+                }
+            }
+        }
+    }
+
+    //displayMessage("Contato alterado com sucesso");
+
+    // Atualiza os dados no Local Storage
+    salvaDados(objDados);
+}
