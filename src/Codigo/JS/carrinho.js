@@ -57,3 +57,20 @@ function AtualizarTotal() {
     document.querySelector(".Jean_Rodape span").innerText = "Total: R$" + ValorTotal
 
 }
+
+function imprimecarrinho() {
+    $("#tablecarrinho").html("");
+    //let tela = document.getElementById('tela');
+    let objDados = dadoscarrinho();
+    objDados = objDados.carrinho;
+    for (let i = 0; i < objDados.length; i++) {
+        let total = objDados[i].preco * objDados[i].qtd;
+        $("#tablecarrinho").append(`<tr><td scope="row"></td>
+                                        <td><img src="${objDados[i].img}" alt="Imagem do produto" width="100" height="100"></td>
+                                        <td>${objDados[i].nome}</td>
+                                        <td>${objDados[i].preco}</td>
+                                        <td>${objDados[i].qtd}</td>
+                                        <td>${total}</td>
+                                    </tr>`);
+    }
+}

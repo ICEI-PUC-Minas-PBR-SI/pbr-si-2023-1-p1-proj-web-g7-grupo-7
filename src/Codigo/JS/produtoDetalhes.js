@@ -77,7 +77,7 @@ function init() {
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="${objDados[i].produto[j].img}" alt="Primeiro slide">
+                            <img id="img" class="d-block w-100" src="${objDados[i].produto[j].img}" alt="Primeiro slide">
                         </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -95,9 +95,9 @@ function init() {
         // Preencher informações da descrição do produto
         strHtml += `
         <div class="descricaodoproduto">
-            <p class="descricaodetalhe">${objDados[i].produto[j].nome}</p>
+            <p id="nome" class="descricaodetalhe">${objDados[i].produto[j].nome}</p>
             <div class="valor">
-                <p class="valordetalhe">R$ ${objDados[i].produto[j].preco}</p>
+                <p id="preco" class="valordetalhe">R$ ${objDados[i].produto[j].preco}</p>
                 <p class="condicaodetalhe">À vista no PIX</p>
                 
                 <nav class="">
@@ -130,7 +130,8 @@ function init() {
                 <h1>Descrição:</h1>
             </div>
             <p class="explicacaoproduto">${detalhes}</p>
-            <p class="valordetalhe">Fornecedor: ${objDados[id].id}</p>
+            <p id="fornecedor" class="valordetalhe">Fornecedor: ${objDados[id].id}</p>
+            <p id="codigo" class="valordetalhe">ID: ${objDados[id].produto[j].codigo}</p>
         </div>
     `;
 
@@ -141,3 +142,85 @@ function init() {
 
 // Chamada da função init ao carregar a página
 init();
+
+
+function dadoscarrinho() {
+  let strDados = localStorage.getItem('db_carrinho');
+  let objDados = {};
+
+  if (strDados) {
+      objDados = JSON.parse(strDados);
+  }
+  else {
+    objDados = {
+      carrinho: [
+        {id: "001", codigo: "001", nome: "cerveja IPA", preco: "5,00",qtd: "5", img: "https://source.unsplash.com/random/500x500?sing=1"},
+        {id: "001", codigo: "002", nome: "cerveja Pilsen", preco: "4,00",qtd: "5", img: "https://source.unsplash.com/random/500x500?sing=2"},
+        {id: "001", codigo: "003", nome: "cerveja Weiss", preco: "6,00",qtd: "5", img: "https://source.unsplash.com/random/500x500?sing=3"},
+        {id: "001", codigo: "004", nome: "cerveja Lager", preco: "3,00",qtd: "5", img: "https://source.unsplash.com/random/500x500?sing=4"},
+        {id: "002", codigo: "001", nome: "refrigerante COCA COLA", preco: "4,00",qtd: "5", img: "https://source.unsplash.com/random/500x500?sing=5"}]
+    }
+  }
+
+  return objDados;
+}
+
+
+
+function incluircarrinho() {
+  // Ler os dados do localStorage
+  let objDados = dadoscarrinho();
+  let carrinho = objDados.carrinho;
+
+  // Incluir um novo contato
+  let strCodigo = document.getElementById('codigo').value;
+  let strfornecedor = document.getElementById('fornecedor').value;
+  let strProduto = document.getElementById('nome').value;
+  let strPreco = document.getElementById('preco').value;
+  let strEstoque = document.getElementById('quantidade').value;
+  let strImg = document.getElementById('img').value;
+  //let strID = document.getElementById('Usuario').textContent;
+
+
+      let novoprod;
+      let cont = 0;
+
+      // Cadastra usuario no banco de dados
+      for (let i = 0; i < carrinho.length; i++) {
+
+          if (strProduto == carrinho[i].nome) {
+              cont++;
+          }
+      }
+
+      if (cont == 0) {
+        novoprod = {
+          id: strfornecedor,
+          codigo: strCodigo,
+          nome: strProduto,
+          preco: strPreco,
+          qtd: strEstoque,
+          img: strImg
+          };
+        objDados.carrinho.push(novoprod);
+        salvacarrinho(objDados);
+      }
+      else {
+        for (let i = 0; i < carrinho.length; i++) {
+          if (strProduto == carrinho[i].nome) {
+            carrinho[i].qtd = parseInt(carrinho[i].qtd) + parseInt(strEstoque);
+          }
+        }
+
+      // Salvar os dados no localStorage novamente
+      salvacarrinho(objDados);
+
+  }
+}
+
+
+function salvacarrinho(dados) {
+  localStorage.setItem('db_carrinho', JSON.stringify(dados));
+}
+
+document.getElementById('botaoComprar').addEventListener('click', incluircarrinho);
