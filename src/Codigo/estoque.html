@@ -32,7 +32,7 @@
             window.addEventListener('load', initPage);
         </script>
     </head>
-    <body>
+    <body onload="imprimeDados()">
         <!--CABEÇALHO NAV BAR -->
     <header class="navbar sticky-top navbar-dark navBar static-top">
         <img class="logo" src="IMG/logo.png" alt="Logo">
@@ -83,34 +83,37 @@
 
     <!-- ESTOQUE DE PRODUTOS EM UMA TABELA -->
   
-    <div class="container">
+<div class="row" id="lista">
+    <div class="col-12">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Código</th>
-                    <th>Produto</th>
-                    <th>Categoria</th>
-                    <th>Marca</th>
-                    <th>Preço de Venda</th>
-                    <th>Estoque</th>
+                    <th scope="col"></th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Estoque</th>
                 </tr>
             </thead>
             <tbody id="estoqueBody">
+                <tr>
+                    <td scope="row"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
                 <!-- Os dados serão preenchidos dinamicamente aqui -->
             </tbody>
         </table>
     </div>
+</div>
 
-
-    <!--INPUT COM INFORMAÇÕES DO PRODUTO-->
-    <div class="input-group">
-        <span class="input-group-text"><input type="text" id="img" name="img" placeholder="link da imagem" required></span>
-        <textarea class="form-control" aria-label="With textarea" placeholder="Informações do Produto" id="detalhes"></textarea>
-    </div>
-    </div>
-    </div>
-    <div id="tela"></div>
-
+    
     <!--Rodapé-->
     <footer class="page-bottom fixed bg-danger">
         <div class="container-footer">
@@ -131,6 +134,7 @@
         </div>
     </footer>
     <Script src="JS/produto.js"></Script>
+    <script src="JS/estoque.js"></script>
 
 </body>
 
