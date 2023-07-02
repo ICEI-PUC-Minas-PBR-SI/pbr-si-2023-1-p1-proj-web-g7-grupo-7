@@ -95,11 +95,11 @@
             <!--BOTÃO PARA ALTERAÇÕES NO CADASTRO DE PRODUTOS-->
 
                <div class="buttons">
-                  <button id="buscar">Buscar</button>
+                  <button id="buscar">Atualizar</button>
                   <button id="cadastrar">Cadastrar</button>
                   <button type="button" id="alterar">Alterar</button>
-                  <button id="salvar">Salvar</button>
                   <button id="excluir">Excluir</button>
+                  <button><a href="/src/Codigo/estoque.html">Estoque</a></button>
                </div>
 
             <!--INPUT COM INFORMAÇÕES DO PRODUTO-->   
@@ -165,7 +165,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <Script src="JS/produto.js"></Script>
     <script>
-        
+            // Intercepta o click do botão Excluir
+            $("#excluir").click(function () {
+                let campoId = $("#codigo").val();
+                if (campoId == "") {
+                    displayMessage("Selecione um contato a ser excluído.");
+                    return;
+                }
+                deleteContato(parseInt(campoId));
+
+                // Reexibe os contatos
+                imprimeDados();
+
+                // Limpa o formulario
+                $("#form-contato")[0].reset();
+            });
+
             // Intercepta o click do botão Alterar
             $("#alterar").click(function () {
                 // Obtem os valores dos campos do formulário
@@ -179,14 +194,15 @@
                 let marca = $("#marca").val();
                 let preco = $("#preco").val();
                 let estoque = $("#estoque").val();
-                //let imgagem = $('#img').text();
+                let imagem = $('#img').val();
                 let detalhes = $('#detalhes').val();
-                let produto = { nome: nome, 
+                let produto = {
+                    nome: nome, 
                     categoria: categoria, 
                     marca: marca, 
                     preco: preco, 
                     estoque: estoque,
-                    //img: imagem,
+                    img: imagem,
                     detalhes: detalhes
                 };
 
@@ -196,7 +212,7 @@
                 imprimeDados();
 
                 // Limpa o formulario
-                //$(".form-group").reset();
+                $(".form-group").reset();
             });
         
         // Preenche o formulário quando o usuario clicar em uma linha da tabela 
