@@ -64,13 +64,13 @@ function imprimecarrinho() {
     let objDados = dadoscarrinho();
     objDados = objDados.carrinho;
     for (let i = 0; i < objDados.length; i++) {
-        let total = objDados[i].preco * objDados[i].qtd;
+        let total = parseFloat(objDados[i].preco) * parseFloat(objDados[i].qtd);
         $("#tablecarrinho").append(`<tr><td scope="row"></td>
                                         <td><img src="${objDados[i].img}" alt="Imagem do produto" width="100" height="100"></td>
                                         <td>${objDados[i].nome}</td>
                                         <td>${objDados[i].preco}</td>
                                         <td>${objDados[i].qtd}</td>
-                                        <td>${total}</td>
+                                        <td>${parseFloat(total)}</td>
                                     </tr>`);
     }
 }
