@@ -65,12 +65,30 @@ function imprimecarrinho() {
     objDados = objDados.carrinho;
     for (let i = 0; i < objDados.length; i++) {
         let total = parseFloat(objDados[i].preco) * parseFloat(objDados[i].qtd);
-        $("#tablecarrinho").append(`<tr><td scope="row"></td>
-                                        <td><img src="${objDados[i].img}" alt="Imagem do produto" width="100" height="100"></td>
-                                        <td>${objDados[i].nome}</td>
-                                        <td>${objDados[i].preco}</td>
-                                        <td>${objDados[i].qtd}</td>
-                                        <td>${parseFloat(total)}</td>
-                                    </tr>`);
+        $("#tablecarrinho").append(`<tr class="J_ProdutoCarrinho">
+        <th>
+            <div class="Jean_Produto">
+                <img src="${objDados[i].img} alt="Imagem do produto" width="100" height="100"">
+                <div class="Jean_Info">
+                    <div class="Jean_Nome">
+                    ${objDados[i].nome}
+                    </div>
+                    <div class="Jean_Categoria">
+                        Categoria/descrição
+                    </div>
+                </div>
+            </div>
+        </th>
+        <th class="J_ValorProduto">R$ ${objDados[i].preco} </th>
+        <th>
+            <div class="Jean_qtd">
+                <input type="number" value="${objDados[i].qtd}" min="0" class="J_Quantidade">
+            </div>
+        </th>
+        <th class="J_Subtotal"> </th>
+        <th><button class="J_RemoveButton">
+                X
+            </button></th>
+    </tr>`);
     }
 }
