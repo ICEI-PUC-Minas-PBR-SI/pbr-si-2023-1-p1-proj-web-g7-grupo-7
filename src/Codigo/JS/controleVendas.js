@@ -64,7 +64,7 @@ function mostrarVendas () {
           <p>${geraCodigoVenda()}</p>
       </div>
       <div class="col">
-          <p>R$ ${total}</p>
+          <p>R$ ${calculaTotal()}</p>
       </div>
       <div class="col">
           <button id="btnRVendas"onclick="mostrarDetalhes()">Detalhes</button>
@@ -159,6 +159,21 @@ function mostrarVendas () {
       return codigo;
   }
   
+  function calculaTotal(){
+
+    let totalCompra = 0;
+      let objDados = dadosCarrinho();
+      objDados = objDados.carrinho;
+      for (let i = 0; i < objDados.length; i++) {
+          let total = parseFloat(objDados[i].preco) * parseFloat(objDados[i].qtd);
+          
+          totalCompra += total;
+      }
+
+      return totalCompra;
+
+  }
+
   //Aleatorizar um numero
   function numeroAleatorio (min, max) {
   
