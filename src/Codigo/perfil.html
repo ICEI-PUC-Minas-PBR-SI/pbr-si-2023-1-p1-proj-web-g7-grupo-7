@@ -43,6 +43,8 @@
 
         // Informa o nome do usuário logado
         document.getElementById("nomeUsuario").innerHTML = usuarioCorrente.nome;
+        document.getElementById("Usuario").innerHTML = usuarioCorrente.login;
+        document.getElementById("email").innerHTML = usuarioCorrente.email;
 
         // Lista os usuários
         exibeUsuarios();
@@ -71,23 +73,223 @@
       <br />
       <div class="conteudo">
         <!--Barra de boas vindas com hora-->
-        <div class="menu_inicio">
-          <div class="row">
-            <div class="col col-lg-8">
-              <p class="h2" id="saudacao"></p>
-            </div>
-            <div class="col col-lg-4">
-              <p class="h2" id="hora-atual"></p>
-            </div>
-          </div>
+        <h3>Perfil:</h3>
+        <br />
+        <br />
+        <hr />
+        <div class="topo">
+          <img class="topo" src="IMG/logoop2.png" />
+        </div>
+        <br /><br />
+        <div class="row">
+          <div class="h4 col-md-2">Nome:</div>
+          <div class="h4 col-md-8"><span id="nomeUsuario"></span></div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="h4 col-md-2">Usuário:</div>
+          <div class="h4 col-md-8"><span id="Usuario"></span></div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="h4 col-md-2">E-mail:</div>
+          <div class="h4 col-md-8"><span id="email"></span></div>
+        </div>
+        <br /><br />
+        <div class="row">
+          <button
+            type="button"
+            class="btn btn-warning"
+            data-toggle="modal"
+            data-target="#loginModal"
+          >
+            Alterar Cadastro
+          </button>
         </div>
         <br />
         <hr />
-        <!--Menu de opções de redirecionamento de pagina-->
       </div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="loginModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="loginModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Login App</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="login-box" class="col">
+                <form
+                  id="login-form"
+                  class="form-modal"
+                  method="post"
+                  onsubmit="loginUser (this)"
+                >
+                  <h2 class="text-center text-dark">Cadastrar usuário</h2>
+                  <br />
+                  <div class="form-group">
+                    <label for="login" class="text-dark">Usuário</label><br />
+                    <input
+                      type="text"
+                      class="modal_login"
+                      name="txt_login"
+                      id="txt_login"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="nome" class="text-dark">Nome completo</label
+                    ><br />
+                    <input
+                      type="text"
+                      class="modal_login"
+                      name="txt_nome"
+                      id="txt_nome"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="text-dark">email</label><br />
+                    <input
+                      type="text"
+                      class="modal_login"
+                      name="txt_email"
+                      id="txt_email"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="senha" class="text-dark">Senha</label><br />
+                    <input
+                      type="password"
+                      class="modal_login"
+                      name="txt_senha"
+                      id="txt_senha"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="senha2" class="text-dark"
+                      >Confirmação de Senha</label
+                    ><br />
+                    <input
+                      type="password"
+                      class="modal_login"
+                      name="txt_senha2"
+                      id="txt_senha2"
+                      class="form-control"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button type="button" id="btn_salvar" class="btn btn-info">
+                Salvar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="JS/login.js"></script>
+      <script>
+        // Declara uma função para processar o formulário de login
+        function processaFormLogin(event) {
+          // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+          event.preventDefault();
+
+          // Obtem os dados de login e senha a partir do formulário de login
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+
+          // Valida login e se estiver ok, redireciona para tela inicial da aplicação
+          resultadoLogin = loginUser(username, password);
+          if (resultadoLogin) {
+            window.location.href = "index.html";
+          } else {
+            // Se login falhou, avisa ao usuário
+            alert("Usuário ou senha incorretos");
+          }
+        }
+
+        function salvaLogin(event) {
+          // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+          event.preventDefault();
+
+          // Obtem os dados do formulário
+          let login = document.getElementById("txt_login").value;
+          let nome = document.getElementById("txt_nome").value;
+          let email = document.getElementById("txt_email").value;
+          let senha = document.getElementById("txt_senha").value;
+          let senha2 = document.getElementById("txt_senha2").value;
+          if (senha != senha2) {
+            alert("As senhas informadas não conferem.");
+            return;
+          }
+
+          // Adiciona o usuário no banco de dados
+          addUser(nome, login, senha, email);
+          alert(
+            "Usuário salvo com sucesso. Proceda com o login para continuar"
+          );
+          window.location.href = "login.html";
+
+          // Oculta a div modal do login
+          //document.getElementById ('loginModal').style.display = 'none';
+          $("#loginModal").modal("hide");
+        }
+
+        // Associa a funçao processaFormLogin  formulário adicionado um manipulador do evento submit
+        document
+          .getElementById("login-form")
+          .addEventListener("submit", processaFormLogin);
+
+        // Associar salvamento ao botao
+        document
+          .getElementById("btn_salvar")
+          .addEventListener("click", salvaLogin);
+      </script>
+
+      <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+      ></script>
     </div>
     <!--Rodapé-->
-    <footer class="fixed-bottom bg-danger">
+    <footer class="page-footer bg-danger">
       <div class="container">
         <hr class="bg-hex" style="margin: 0 15%" />
         <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
