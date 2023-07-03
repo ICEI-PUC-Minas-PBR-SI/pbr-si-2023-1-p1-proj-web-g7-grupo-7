@@ -42,11 +42,10 @@ function AtualizarTotal() {
 
     const ProdutoCarrinho = document.getElementsByClassName("J_ProdutoCarrinho")
     ValorTotal = 0
-    console.log(ProdutoCarrinho)
+    
 
     for (var i = 0; i < ProdutoCarrinho.length; i++) {
         const PreçoProduto = ProdutoCarrinho[i].getElementsByClassName("J_ValorProduto")[0].innerText.replace("R$", "").replace(",", ".")
-        console.log(PreçoProduto)
         const QuantidadeProduto = ProdutoCarrinho[i].getElementsByClassName("J_Quantidade")[0].value
 
 
@@ -59,6 +58,14 @@ function AtualizarTotal() {
     document.querySelector(".Jean_Rodape span").innerText = "Total: R$" + ValorTotal
 
 }
+
+function removerItemCarrinho(element) {
+    const row = element.closest("tr");
+    row.remove();
+    AtualizarTotal();
+}
+
+
 
 function imprimecarrinho() {
     $("#tablecarrinho").html("");
@@ -84,11 +91,11 @@ function imprimecarrinho() {
         <th class="J_ValorProduto">R$ ${objDados[i].preco} </th>
         <th>
             <div class="Jean_qtd">
-                <input type="number" value="${objDados[i].qtd}" min="0" class="J_Quantidade">
+                <input type="number" value="${objDados[i].qtd}" min="0" class="J_Quantidade" onclick="AtualizarTotal()">
             </div>
         </th>
         <th class="J_Subtotal">R$ ${total}</th>
-        <th><button class="J_RemoveButton">
+        <th><button class="J_RemoveButton" onclick="removerItemCarrinho(this)">
                 X
             </button></th>
     </tr>`);
