@@ -25,6 +25,7 @@ function buscarProdutos() {
    // Obtém os dados armazenados
   let objDados = leDados();
   let cadastro = objDados.cadastro;
+  let strID = document.getElementById('Usuario').textContent;
 
   // Array para armazenar os produtos filtrados
   let filteredProdutos = [];
@@ -32,6 +33,7 @@ function buscarProdutos() {
   // Loop para percorrer os itens de cadastro
   for (let i = 0; i < cadastro.length; i++) {
       let produtos = cadastro[i].produto;
+      if (strID == cadastro[i].id) {
       // Loop para percorrer os produtos de cada item
       for (let j = 0; j < produtos.length; j++) {
           let produto = produtos[j];
@@ -48,6 +50,7 @@ function buscarProdutos() {
               filteredProdutos.push(produto);
           }
       }
+    }
   }
    // Retorna o array com os produtos filtrados 
   return filteredProdutos;
