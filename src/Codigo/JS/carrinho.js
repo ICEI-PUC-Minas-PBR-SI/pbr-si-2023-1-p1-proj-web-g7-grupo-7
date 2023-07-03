@@ -98,7 +98,18 @@ function atualizarCarrinho() {
     AtualizarTotal();
 }
 
-
+window.addEventListener('load', function() {
+    const btnConcluir = document.getElementById('btnConcluir');
+    btnConcluir.addEventListener('click', function(event) {
+      const produtosCarrinho = document.getElementsByClassName('J_ProdutoCarrinho');
+      
+      if (produtosCarrinho.length === 0) {
+        event.preventDefault(); // Impede o comportamento padrão do clique do botão
+        alert('Você não pode concluir a compra sem produtos no carrinho!');
+      }
+    });
+  });
+  
 
 
 
