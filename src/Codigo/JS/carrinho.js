@@ -1,6 +1,6 @@
 //se a página esta carregada ou não
 
-if (document.readyState === "loaing") {
+/*if (document.readyState === "loaing") {
     document.addEventListener("DOMContentLoaded")
 } else {
     ready()
@@ -35,12 +35,14 @@ function RemoverProduto(event) {
     AtualizarTotal()
 
 }
-
+*/
 //atualizar o valor do carrinho no inicio 
+
 function AtualizarTotal() {
 
     const ProdutoCarrinho = document.getElementsByClassName("J_ProdutoCarrinho")
     ValorTotal = 0
+    console.log(ProdutoCarrinho)
 
     for (var i = 0; i < ProdutoCarrinho.length; i++) {
         const PreçoProduto = ProdutoCarrinho[i].getElementsByClassName("J_ValorProduto")[0].innerText.replace("R$", "").replace(",", ".")
@@ -90,5 +92,11 @@ function imprimecarrinho() {
                 X
             </button></th>
     </tr>`);
+        
     }
+    AtualizarTotal()    
 }
+
+
+
+
