@@ -1,42 +1,3 @@
-//se a página esta carregada ou não
-
-/*if (document.readyState === "loaing") {
-    document.addEventListener("DOMContentLoaded")
-} else {
-    ready()
-}
-
-var ValorTotal = "0,00"
-
-//Realizar somente depois da tela carregar
-function ready() {
-    const RemoverBotao = document.getElementsByClassName("J_RemoveButton")
-    for (var i = 0; i < RemoverBotao.length; i++) {
-        RemoverBotao[i].addEventListener("click", RemoverProduto)
-    }
-
-    const QuantidadeBotao = document.getElementsByClassName("J_Quantidade")
-    for (var i = 0; QuantidadeBotao.length; i++) {
-        QuantidadeBotao[i].addEventListener("change", SeForNulo)
-    }
-}
-//testando
-function SeForNulo(event) {
-    if (event.target.value === 0) {
-        event.target.parentElement.parentElement.remove()
-    }
-
-    AtualizarTotal()
-}
-//botão de remover produto
-function RemoverProduto(event) {
-
-    event.target.parentElement.parentElement.remove()
-    AtualizarTotal()
-
-}
-*/
-//atualizar o valor do carrinho no inicio 
 
 function AtualizarTotal() {
 
@@ -107,16 +68,21 @@ function imprimecarrinho() {
 }
 
 function atualizarCarrinho() {
-    let objDados = dadoscarrinho();
-    objDados = objDados.carrinho;
-   
-    for (let i = 0; i < objDados.length; i++){
-        objDados[i].qtd = document.getElementsByClassName("J_Quantidade")[i].value
+    const objDados = dadoscarrinho().carrinho;
+
+    for (let i = 0; i < objDados.length; i++) {
+        const novaQuantidade = document.getElementsByClassName("J_Quantidade")[i].value;
+        objDados[i].qtd = novaQuantidade;
         console.log(objDados[i].qtd)
-        AtualizarTotal();
-        
     }
-    
+
+    const carrinhoAtualizado = {
+        carrinho: objDados
+    };
+
+    localStorage.setItem("db_carrinho", JSON.stringify(carrinhoAtualizado));
+
+    AtualizarTotal();
 }
 
 
