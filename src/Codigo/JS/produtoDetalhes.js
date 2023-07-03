@@ -134,6 +134,10 @@ function init() {
         </div>
     `;
 
+    //<p id="codigo" class="valordetalhe">ID: ${objDados[id].produto[j].codigo}</p>
+
+     
+
       section.innerHTML = strHtml;
     }
   }
