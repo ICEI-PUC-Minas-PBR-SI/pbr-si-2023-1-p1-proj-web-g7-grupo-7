@@ -28,18 +28,34 @@ function buscarelatorio() {
     objDados = objDados.carrinho;
     let dados = dadosrelatorio();
     dados = dados.relatorio;
-    let novoprod;
+
+    let dadosbanco = leDados();
+    dadosbanco = dadosbanco.cadastro;
+
+    let newprod;
 
     for (let i = 0; i < objDados.length; i++) {
-        
-        novoprod = {
+        for (let j = 0; j < dadosbanco.length; j++) {
+            if (objDados[i].id == dadosbanco[j].id) {
+                for (let k = 0; k < dadosbanco[j].produto.length; k++) {
+                    if (objDados[i].codigo == dadosbanco[j].produto[k].codigo) {
+                        dadosbanco[j].produto[k].estoque = parseInt(dadosbanco[j].produto[k].estoque) - parseInt(objDados[i].qtd);
+                    }
+                    salvaDados(dadosbanco);
+                }
+            }
+        }
+    }
+    
+    for (let i = 0; i < objDados.length; i++) {
+        newprod = {
             id: strfornecedor = objDados[i].id,
             codigo: strCodigo = objDados[i].codigo,
             nome: strProduto = objDados[i].nome,
             preco: strPreco = objDados[i].preco,
             qtd: strEstoque = objDados[i].qtd,
-            };
-        dados.push(novoprod);
+        };
+        dados.push(newprod);
     }
     salvarelatorio(dados);
     localStorage.removeItem('db_carrinho');
