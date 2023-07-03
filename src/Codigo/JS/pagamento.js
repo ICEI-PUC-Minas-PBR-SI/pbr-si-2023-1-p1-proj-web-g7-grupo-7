@@ -19,11 +19,11 @@ function dadosrelatorio() {
     return objDados;
 }
 
-function dadosrelatorio(dados) {
+function salvarelatorio(dados) {
     localStorage.setItem('bd_relatorio', JSON.stringify(dados));
   }
 
-function buscacompra() {
+function buscarelatorio() {
     let objDados = dadoscarrinho();
     objDados = objDados.carrinho;
     let dados = dadosrelatorio();
@@ -41,7 +41,7 @@ function buscacompra() {
             };
         dados.push(novoprod);
     }
-    dadosrelatorio(dados);
+    salvarelatorio(dados);
     localStorage.removeItem('db_carrinho');
     window.location.href = "relatorio.html";
 }
