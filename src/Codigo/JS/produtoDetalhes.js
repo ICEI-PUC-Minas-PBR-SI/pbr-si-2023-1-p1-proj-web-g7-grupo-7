@@ -100,7 +100,7 @@ function init() {
                 <p id="preco" class="valordetalhe">R$ ${objDados[i].produto[j].preco}</p>
                 <p class="condicaodetalhe">À vista no PIX</p>
                 
-                <nav class="">
+                <!--<nav class="">
                     <select id="quantidade" class="quantidade">
                         <option>1</option>
                         <option>2</option>
@@ -112,12 +112,12 @@ function init() {
                         <option>8</option>
                         <option>9</option>
                     </select>
-                </nav>
+                </nav>-->
             </div>
             <div class="comprarDescricao">
-                <button id="botaoComprar"><a class="botaoProduto" href= "carrinho.html">Comprar</a></button>
+                <button id="botaoComprar" onclick="incluircarrinho()"><a class="botaoProduto" href="carrinho.html">Comprar</a></button>
             </div>
-        </div>
+          </div>
     `;
       }
 
@@ -130,7 +130,7 @@ function init() {
                 <h1>Descrição:</h1>
             </div>
             <p class="explicacaoproduto">${detalhes}</p>
-            <p id="fornecedor" class="valordetalhe">Fornecedor: ${objDados[id].id}</p>
+            <p id="fornecedor" class="valordetalhe">${objDados[id].id}</p>
         </div>
     `;
 
@@ -175,7 +175,9 @@ function dadoscarrinho() {
   return objDados;
 }
 
-
+function salvacarrinho(dados) {
+  localStorage.setItem('db_carrinho', JSON.stringify(dados));
+}
 
 function incluircarrinho() {
   // Ler os dados do localStorage
@@ -183,12 +185,12 @@ function incluircarrinho() {
   let carrinho = objDados.carrinho;
 
   // Incluir um novo contato
-  let strCodigo = document.getElementById('codigo').value;
-  let strfornecedor = document.getElementById('fornecedor').value;
-  let strProduto = document.getElementById('nome').value;
-  let strPreco = document.getElementById('preco').value;
-  let strEstoque = document.getElementById('quantidade').value;
-  let strImg = document.getElementById('img').value;
+  //let strCodigo = document.getElementById('codigo').value;
+  let strfornecedor = document.getElementById('fornecedor').innerText;
+  let strProduto = document.getElementById('nome').innerText;
+  let strPreco = document.getElementById('preco').innerText;
+  let strEstoque = 1;
+  let strImg = document.getElementById('img').src;
   //let strID = document.getElementById('Usuario').textContent;
 
 
@@ -206,7 +208,7 @@ function incluircarrinho() {
       if (cont == 0) {
         novoprod = {
           id: strfornecedor,
-          codigo: strCodigo,
+          //codigo: strCodigo,
           nome: strProduto,
           preco: strPreco,
           qtd: strEstoque,
@@ -216,21 +218,9 @@ function incluircarrinho() {
         salvacarrinho(objDados);
       }
       else {
-        for (let i = 0; i < carrinho.length; i++) {
-          if (strProduto == carrinho[i].nome) {
-            carrinho[i].qtd = parseInt(carrinho[i].qtd) + parseInt(strEstoque);
-          }
-          objDados.carrinho.push(carrinho[i]);
-        }
+        alert("Produto já adicionado ao carrinho!");
+      }
 
       // Salvar os dados no localStorage novamente
       salvacarrinho(objDados);
   }
-}
-
-
-function salvacarrinho(dados) {
-  localStorage.setItem('db_carrinho', JSON.stringify(dados));
-}
-
-document.getElementById('botaoComprar').addEventListener('click', incluircarrinho);
