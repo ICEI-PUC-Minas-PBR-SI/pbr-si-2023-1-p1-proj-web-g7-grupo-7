@@ -97,7 +97,7 @@ function init() {
         <div class="descricaodoproduto">
             <p id="nome" class="descricaodetalhe">${objDados[i].produto[j].nome}</p>
             <div class="valor">
-                <p id="preco" class="valordetalhe">R$ ${objDados[i].produto[j].preco}</p>
+                <p id="preco" class="valordetalhe">${objDados[i].produto[j].preco}</p>
                 <p class="condicaodetalhe">À vista no PIX</p>
                 
                 <!--<nav class="">
@@ -139,7 +139,7 @@ function init() {
     const codigo = objDados[id].produto[produtoIndex].codigo;
       strHtml += `
         <div class="descricao2">
-        <p id="codigo" class="valordetalhe">ID: ${codigo}</p>
+        <p id="codigo" class="valordetalhe">${codigo}</p>
         </div>
     `;
 
@@ -164,11 +164,11 @@ function dadoscarrinho() {
   else {
     objDados = {
       carrinho: [
-        {id: "001", codigo: "001", nome: "cerveja IPA", preco: "5,00",qtd: "5", img: "https://source.unsplash.com/random/500x500?sing=1"},
+        /*{id: "001", codigo: "001", nome: "cerveja IPA", preco: "5,00",qtd: "5", img: "https://source.unsplash.com/random/500x500?sing=1"},
         {id: "001", codigo: "002", nome: "cerveja Pilsen", preco: "4,00",qtd: "5", img: "https://source.unsplash.com/random/500x500?sing=2"},
         {id: "001", codigo: "003", nome: "cerveja Weiss", preco: "6,00",qtd: "5", img: "https://source.unsplash.com/random/500x500?sing=3"},
         {id: "001", codigo: "004", nome: "cerveja Lager", preco: "3,00",qtd: "5", img: "https://source.unsplash.com/random/500x500?sing=4"},
-        {id: "002", codigo: "001", nome: "refrigerante COCA COLA", preco: "4,00",qtd: "5", img: "https://source.unsplash.com/random/500x500?sing=5"}]
+      {id: "002", codigo: "001", nome: "refrigerante COCA COLA", preco: "4,00",qtd: "5", img: "https://source.unsplash.com/random/500x500?sing=5"}*/]
     }
   }
 
@@ -185,7 +185,7 @@ function incluircarrinho() {
   let carrinho = objDados.carrinho;
 
   // Incluir um novo contato
-  //let strCodigo = document.getElementById('codigo').value;
+  let strCodigo = document.getElementById('codigo').innerText;
   let strfornecedor = document.getElementById('fornecedor').innerText;
   let strProduto = document.getElementById('nome').innerText;
   let strPreco = document.getElementById('preco').innerText;
@@ -208,7 +208,7 @@ function incluircarrinho() {
       if (cont == 0) {
         novoprod = {
           id: strfornecedor,
-          //codigo: strCodigo,
+          codigo: strCodigo,
           nome: strProduto,
           preco: strPreco,
           qtd: strEstoque,

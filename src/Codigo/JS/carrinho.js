@@ -85,7 +85,7 @@ function imprimecarrinho() {
                 <input type="number" value="${objDados[i].qtd}" min="0" class="J_Quantidade">
             </div>
         </th>
-        <th class="J_Subtotal"> </th>
+        <th class="J_Subtotal">R$ ${total}</th>
         <th><button class="J_RemoveButton">
                 X
             </button></th>
