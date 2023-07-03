@@ -115,7 +115,7 @@ function init() {
                 </nav>
             </div>
             <div class="comprarDescricao">
-                <button id="botaoComprar"><a  class="botaoProduto">Comprar</a></button>
+                <button id="botaoComprar"><a class="botaoProduto" href= "carrinho.html">Comprar</a></button>
             </div>
         </div>
     `;
