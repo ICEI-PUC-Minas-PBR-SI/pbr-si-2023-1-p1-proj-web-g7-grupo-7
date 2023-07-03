@@ -23,9 +23,22 @@ function AtualizarTotal() {
 
 function removerItemCarrinho(element) {
     const row = element.closest("tr");
-    row.remove();
-    db_carrinho
-    AtualizarTotal();
+    const nomeProduto = row.querySelector(".Jean_Nome").textContent.trim();
+    
+    // Obter os dados do carrinho do localStorage
+    let carrinho = JSON.parse(localStorage.getItem("db_carrinho"));
+    
+    // Encontrar o índice do produto a ser removido no array do carrinho
+    const index = carrinho.carrinho.findIndex(produto => produto.nome === nomeProduto);
+    
+    if (index !== -1) {
+        carrinho.carrinho.splice(index, 1);
+        localStorage.setItem("db_carrinho", JSON.stringify(carrinho));
+        
+        // Remover a linha do produto da tabela
+        row.remove();
+        AtualizarTotal();
+    }
 }
 
 
@@ -84,6 +97,8 @@ function atualizarCarrinho() {
 
     AtualizarTotal();
 }
+
+
 
 
 
