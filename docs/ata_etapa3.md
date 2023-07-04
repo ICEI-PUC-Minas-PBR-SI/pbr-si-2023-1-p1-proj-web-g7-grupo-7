@@ -24,5 +24,5 @@ Elenice Florentina de Oliveira dos Reis
      Responsável pela tela de cadastro de produtos, tela com caracteristicas e foto do produto a ser cadastrado.
      
 Lorrainy Pâmela Siqueira Ferreira 
-     Responsável pela tela de login, e tela do menu iniciar após realizar login
+     Responsável pela tela de login, e tela do menu iniciar após realizar login, e tela de perfil
 
